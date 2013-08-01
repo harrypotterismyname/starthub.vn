@@ -3,10 +3,11 @@ from django.conf.urls import patterns, include, url
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
+from ignite.views import *
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'startups.views.home', name='home'),
+     url(r'^$', home, name='home'),
     # url(r'^startups/', include('startups.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

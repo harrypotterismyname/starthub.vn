@@ -1,4 +1,7 @@
 # Django settings for startups project.
+import os
+current_directory = os.path.dirname(__file__)
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -110,6 +113,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    current_directory + "/templates/",
+
 )
 
 INSTALLED_APPS = (
@@ -174,3 +179,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+SESSION_COOKIE_DOMAIN=".startups.vn"
