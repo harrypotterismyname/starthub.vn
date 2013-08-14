@@ -17,6 +17,7 @@ class Company(models.Model):
     email = models.CharField(max_length=256,default="")
     address = models.CharField(max_length=256,default="")
     website = models.CharField(max_length=256,default="")
+    logo = models.FileField(blank= True, null= True)
 
     def __unicode__(self):
             return self.name
