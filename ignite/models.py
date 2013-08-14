@@ -1,5 +1,8 @@
 from django.db import models
 
+class Category(models.Model):
+    name = models.CharField(max_length=255, default="", blank=True)
+
 # Create your models here.
 class Company(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
@@ -27,6 +30,4 @@ class Founder(models.Model):
     founder = models.ForeignKey(Person)
     company = models.ForeignKey(Company)
 
-class Category(models.Model):
-    name = models.CharField(max_length=255, default="", blank=True)
 
