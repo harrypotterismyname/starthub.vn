@@ -218,7 +218,7 @@ if  os.getenv('USER') == 'hongleviet' or os.getenv('USER') == 'jay':  # or os.ge
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = "AKIAIPBHJ2T5DS7WLXPA"
-AWS_QUERYSTRING_AUTH = False 
+AWS_QUERYSTRING_AUTH = False
 AWS_SECRET_ACCESS_KEY = "M+HXy1FKevYn7fHXL5oKKp4YC4kR3s+9b/Te4J5F"
 AWS_STORAGE_BUCKET_NAME = "humblefiles.startups.vn"
 

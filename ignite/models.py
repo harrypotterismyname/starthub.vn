@@ -1,15 +1,19 @@
 from django.db import models
 from django.utils.text import  slugify
 import uuid
+from startups import settings
 
 def get_filestore_path(instance, filename):
     ext = filename.split('.')[-1]
-    filename = "our-humble-logo/%s-%s.%s" % (uuid.uuid4(), uuid.uuid4(), ext)
+    filename = "our-humble-logo/%s.%s" % (uuid.uuid4(), ext)
     return filename
 
 
 class Category(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
+    def __unicode__(self):
+            return self.name
+
 
 # Create your models here.
 class Company(models.Model):
@@ -26,6 +30,9 @@ class Company(models.Model):
     website = models.CharField(max_length=256,default="")
     logo = models.FileField(blank= True, null= True,upload_to=get_filestore_path)
 
+    def get_logo(self):
+        return settings.S3STATIC_URL + str( self.logo)
+
     def __unicode__(self):
             return self.name
 
@@ -35,6 +42,10 @@ class Company(models.Model):
 
 class Person(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
+
+    def __unicode__(self):
+            return self.name
+
 
 class TeamMember(models.Model):
     member = models.ForeignKey(Person)
