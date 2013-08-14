@@ -2,6 +2,12 @@
 
 {% block content %}
 
-    <h3>It's here!</h3>
+    {% for company in companies %}
+     <h3>
+        <a href="{{ company.get_url }}">
+        {{ company.name }}
+        </a>
+    </h3>
+    {% endfor %}
 
 {% endblock %}

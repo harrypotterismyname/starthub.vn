@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import  slugify
 
 class Category(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
@@ -16,6 +17,12 @@ class Company(models.Model):
     email = models.CharField(max_length=256,default="")
     address = models.CharField(max_length=256,default="")
     website = models.CharField(max_length=256,default="")
+
+    def __unicode__(self):
+            return self.name
+
+    def get_url(self):
+        return "/company/" + str(self.id) + "-" + slugify(self.name) + "/"
 
 
 class Person(models.Model):
