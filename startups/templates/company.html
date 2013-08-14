@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+   {% block title %}
+{{ company.name }}
+{% endblock %}
+{% block content %}
+
+    <h3> Company name: 
+        <a href="{{ company.get_url }}">
+        {{ company.name }}
+        </a>
+    </h3>
+
+{% endblock %}
