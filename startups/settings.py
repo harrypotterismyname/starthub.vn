@@ -10,6 +10,10 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+#AUTH_PROFILE_MODULE = "user_profile.Profile"
+
+SESSION_COOKIE_DOMAIN = ".startups.vn"
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -52,7 +56,11 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+
+
+MEDIA_ROOT = current_directory + '/media/'
+
+
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -63,11 +71,16 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = current_directory + '/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+
+
+MEDIA_URL = 'http://static.giasuonline.edu.vn/media/'
+STATIC_URL = 'http://static.giasuonline.edu.vn/'
+S3STATIC_URL = STATIC_URL
+
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -129,6 +142,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'ignite',
+      'storages',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -198,3 +212,10 @@ if  os.getenv('USER') == 'hongleviet':  # or os.getenv("COMPUTERNAME")== "NEO-PC
 
     }
     SESSION_COOKIE_DOMAIN = None
+    STATIC_URL = '/static/'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = "AKIAIPBHJ2T5DS7WLXPA"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "humblefiles.startups.vn"
