@@ -77,8 +77,8 @@ STATIC_ROOT = current_directory + '/static/'
 # Example: "http://media.lawrence.com/static/"
 
 
-MEDIA_URL = 'http://static.giasuonline.edu.vn/media/'
-STATIC_URL = 'http://static.giasuonline.edu.vn/'
+MEDIA_URL = 'http://humblefiles.startups.vn/media/'
+STATIC_URL = 'http://humblefiles.startups.vn/'
 S3STATIC_URL = STATIC_URL
 
 
@@ -208,14 +208,19 @@ if  os.getenv('USER') == 'hongleviet' or os.getenv('USER') == 'jay':  # or os.ge
             'HOST': '',  # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '',  # Set to empty string for default. Not used with sqlite3.
         },
-            'heroku': dj_database_url.config(default='postgres://jxdkgkuzpstyrp:vmjHkviTmyNsfvZo4hZktEUhcZ@ec2-23-23-237-0.compute-1.amazonaws.com:5432/d1u1lnv8kfslhj')
+            'heroku': dj_database_url.config(default='postgres://xxx:vmjHkviTmyNsfvZxo4hZktEUhcZ@ec2-23-23-237-0.compute-1.amazonaws.com:5432/d1u1lssnv8kfslhj')
 
     }
     SESSION_COOKIE_DOMAIN = None
     STATIC_URL = '/static/'
+    MEDIA_URL = '/static/media/'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = "AKIAIPBHJ2T5DS7WLXPA"
+AWS_QUERYSTRING_AUTH = False 
 AWS_SECRET_ACCESS_KEY = "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"
 AWS_STORAGE_BUCKET_NAME = "humblefiles.startups.vn"
+
+ADMIN_MEDIA_PREFIX = '/static/admin'
+
