@@ -13,3 +13,14 @@ def home(request):
 
 
      return render_to_response('index.html', variables )
+
+
+def company(request):
+
+     variables = RequestContext(request, {
+            'data': "Hello, I'm here",
+
+            })
+
+
+     return render_to_response('index.html', variables )

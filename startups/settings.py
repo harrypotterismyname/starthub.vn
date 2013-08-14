@@ -6,7 +6,7 @@ current_directory = os.path.dirname(__file__)
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
+ADMINS = (  
     # ('Your Name', 'your_email@example.com'),
 )
 
@@ -14,7 +14,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': '',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
@@ -181,3 +181,19 @@ STATICFILES_DIRS = (
 )
 
 SESSION_COOKIE_DOMAIN=".startups.vn"
+
+
+if  os.getenv('USER') == 'hongleviet':  # or os.getenv("COMPUTERNAME")== "NEO-PC":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',  # Add 'mysql', 'sqlite3' or 'oracle'.
+            'NAME':  current_directory + '/hong-db.db',  # Or path to database file if using sqlite3.
+            'USER': '',  # Not used with sqlite3.
+            'PASSWORD': '',  # Not used with sqlite3.
+            'HOST': '',  # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '',  # Set to empty string for default. Not used with sqlite3.
+        },
+            'heroku': dj_database_url.config(default='postgres://jxdkgkuzpstyrp:vmjHkviTmyNsfvZo4hZktEUhcZ@ec2-23-23-237-0.compute-1.amazonaws.com:5432/d1u1lnv8kfslhj')
+
+    }
+    SESSION_COOKIE_DOMAIN = None
