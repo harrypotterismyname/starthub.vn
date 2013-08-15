@@ -11,6 +11,9 @@ def get_filestore_path(instance, filename):
 
 class Category(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
+
+
+
     def __unicode__(self):
             return self.name
 
@@ -29,6 +32,8 @@ class Company(models.Model):
     address = models.CharField(max_length=256,default="")
     website = models.CharField(max_length=256,default="")
     logo = models.FileField(blank= True, null= True,upload_to=get_filestore_path)
+
+    founders = models.ManyToManyField(Person, through="Founder")
 
     def get_logo(self):
         return settings.S3STATIC_URL + str( self.logo)
