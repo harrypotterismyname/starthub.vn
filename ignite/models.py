@@ -19,9 +19,9 @@ class Category(models.Model):
 class Company(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
     category = models.ForeignKey(Category)
-    founding_year = models.IntegerField(null= True, default=2013)
-    founding_month = models.IntegerField(null= True, default=1)
-    founding_day = models.IntegerField(null= True, default=1)
+    founding_year = models.IntegerField(null= True, default=2013, blank= True)
+    founding_month = models.IntegerField(null= True, default=1, blank= True)
+    founding_day = models.IntegerField(null= True, default=1, blank= True)
     one_sentence_description = models.CharField(max_length=256, default="")
     description = models.TextField(default= "")
     phone = models.CharField(max_length=256, default="")
