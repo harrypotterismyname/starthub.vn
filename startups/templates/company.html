@@ -87,13 +87,13 @@
             <div class="media">
               <a class="pull-left" href="#">
 
-                  <img src="{% gravatar_for_email founder.founder.email 64 %}" style="width: 64px;"/>
+                  <img src="{% gravatar_for_email founder.email 64 %}" style="width: 64px;"/>
 
 
               </a>
               <div class="media-body">
-                <h4 class="media-heading">Viet Hong</h4>
-                Cras sit amet nibh libero, in gravida nulla. 
+                <h4 class="media-heading">{{ founder.name }}</h4>
+                {{ founder.bio }}
               </div>
             </div>
 

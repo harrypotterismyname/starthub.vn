@@ -62,10 +62,16 @@ class TeamMember(models.Model):
     member = models.ForeignKey(Person)
     company = models.ForeignKey(Company)
 
+    def __unicode__(self):
+            return self.member.name + " - " + self.company.name
+
 
 class Founder(models.Model):
     founder = models.ForeignKey(Person)
     company = models.ForeignKey(Company)
     title = models.CharField(max_length=255, default="", blank=True)
+
+    def __unicode__(self):
+            return self.founder.name + " - " + self.company.name
 
 
