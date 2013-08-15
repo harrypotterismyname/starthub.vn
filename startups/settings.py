@@ -207,7 +207,7 @@ STATICFILES_DIRS = (
 SESSION_COOKIE_DOMAIN=".startups.vn"
 
 
-if  os.getenv('USER') == 'hongleviet' or os.getenv('USER') == 'jay':  # or os.getenv("COMPUTERNAME")== "NEO-PC":
+if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay":  # or os.getenv("COMPUTERNAME")== "NEO-PC":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',  # Add 'mysql', 'sqlite3' or 'oracle'.
@@ -223,6 +223,19 @@ if  os.getenv('USER') == 'hongleviet' or os.getenv('USER') == 'jay':  # or os.ge
     SESSION_COOKIE_DOMAIN = None
     STATIC_URL = '/static/'
     MEDIA_URL = '/static/media/'
+
+if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay":  # or os.getenv("COMPUTERNAME")== "NEO-PC":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',  # Add 'mysql', 'sqlite3' or 'oracle'.
+            'NAME':  current_directory + '/tomo-db.db',  # Or path to database file if using sqlite3.
+            'USER': '',  # Not used with sqlite3.
+            'PASSWORD': '',  # Not used with sqlite3.
+            'HOST': '',  # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '',  # Set to empty string for default. Not used with sqlite3.
+        },
+    }
+
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
