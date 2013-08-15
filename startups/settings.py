@@ -152,6 +152,7 @@ INSTALLED_APPS = (
     'ignite',
       'storages',
      'inplaceeditform',
+     'gravatar',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -224,7 +225,7 @@ if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay":  # or os.ge
     STATIC_URL = '/static/'
     MEDIA_URL = '/static/media/'
 
-if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay":  # or os.getenv("COMPUTERNAME")== "NEO-PC":
+if  os.getenv("USER") == "jay":  # or os.getenv("COMPUTERNAME")== "NEO-PC":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',  # Add 'mysql', 'sqlite3' or 'oracle'.

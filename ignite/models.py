@@ -19,6 +19,19 @@ class Category(models.Model):
 
 
 # Create your models here.
+
+
+
+class Person(models.Model):
+    name = models.CharField(max_length=255, default="", blank=True)
+    email = models.CharField(max_length=255, default="", blank=True)
+    bio = models.TextField( default="", blank=True)
+
+    def __unicode__(self):
+            return self.name
+
+
+
 class Company(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
     category = models.ForeignKey(Category)
@@ -45,13 +58,6 @@ class Company(models.Model):
         return "/company/" + str(self.id) + "-" + slugify(self.name) + "/"
 
 
-class Person(models.Model):
-    name = models.CharField(max_length=255, default="", blank=True)
-
-    def __unicode__(self):
-            return self.name
-
-
 class TeamMember(models.Model):
     member = models.ForeignKey(Person)
     company = models.ForeignKey(Company)
@@ -60,5 +66,6 @@ class TeamMember(models.Model):
 class Founder(models.Model):
     founder = models.ForeignKey(Person)
     company = models.ForeignKey(Company)
+    title = models.CharField(max_length=255, default="", blank=True)
 
 
