@@ -1,15 +1,187 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-    <title>
-        {% block title %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}
 Startups.vn
 {% endblock %}
-        </title>
-</head>
-<body>
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+h2 {
+    color: #1a70c5;
+    font-size: 21px;
+}
+[class*="span"] {
+    margin-left: 12px;
+}
+
+.second-navbar .nav > li > a:focus, .second-navbar .nav > li > a:hover { color: white; }
+.first-navbar { margin-bottom: 0px; }
+.navbar-inner { 
+    -webkit-border-radius: 0;      
+    -moz-border-radius: 0;      
+    border-radius: 0;      
+}
+.second-navbar { background-color: #1a70c5; margin-bottom: 0; }
+.second-navbar .nav > li > a { text-shadow: none; color: #f1f1f1; }
+.second-navbar .nav > .active > a, .second-navbar .nav > .active > a:hover, .second-navbar .nav > .active > a:focus { color: #f1f1f1; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; }
+.navbar-inner { border: none; }
+
+.tags span {
+    color: #e6e6e6;
+    font-size: 12px;
+}
+
+.extraneous-non-semantic-markup {
+    padding: 20px;
+    background: white;
+    margin-bottom: 12px;
+}
+
+.overview-fields { margin: 0; }
+.overview-fields li { list-style-type: none; }
+.overview-fields .li-field {
+    width: 150px;
+    display: inline-block;
+    color: #9b9b9b;
+}
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="{{ STATIC_URL }}bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}bootstrap/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}bootstrap/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}bootstrap/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="{{ STATIC_URL }}bootstrap/ico/favicon.png">
+  </head>
+
+  <body style="
+    background-color: #e6e6e6;
+">
+
+  <div class="first-navbar navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <a class="brand" href="#">StartUp.vn</a>
+                  <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <form class="navbar-search pull-left" action="">
+                      <input type="text" class="search-query span2" placeholder="Search">
+                    </form>
+                    <ul class="nav pull-right">
+                      <li><a href="#">Login</a></li>
+                      <li class="divider-vertical"></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">English</a></li>
+                          <li><a href="#">Vietnamese</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">I'm stupid</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div>
+
+<div class="second-navbar navbar">
+              <div class="navbar-inner" style="
+    background-color: #1a70c5;
+    background-image: none;
+">
+
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse" style="
+">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  
+                  <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav">
+                      <li class="active" style="
+"><a href="#" style="
+    background-image: none;
+    background-color: #1f7fdf;
+">Home</a></li>
+                      <li><a href="#">Agenda</a></li>
+                      
+  <li><a href="#">Speakers</a></li>
+  <li><a href="#">Speakers</a></li>
+  <li><a href="#">Speakers</a></li><li><a href="#">About Us</a></li>
+                      
+                    </ul>
+                    
+                    
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div>
+            
 {% block content %}
 
 {% endblock %}
-</body>
+    
+
+<footer>
+<div class="container" style="
+    background-color: #f1f1f1;
+    width: auto;
+">
+      <div class="row" style="
+    margin: 0;
+">
+        <div class="container">
+          <div class=""><h2>About Us</h2>
+  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+  <p>Blah blah blah</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="container" style="
+    background-color: #1a70c5;
+    width: auto;
+    color: white;
+    padding: 15px;
+">
+      <div class="row" style="
+    margin: 0;
+">
+        <div class="container">
+  <p>Copyright &copy;  2013 Startup.vn Hackerz</p>
+        </div>
+      </div>
+    </div>    
+</footer>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ STATIC_URL }}bootstrap/js/jquery-1.10.2.min.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+
+  </body>
 </html>
+
