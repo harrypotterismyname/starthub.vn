@@ -14,6 +14,7 @@ Startups.vn
     <!-- Le styles -->
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-select.css" rel="stylesheet">
     <style type="text/css">
 h2 {
     color: #1a70c5;
@@ -183,7 +184,12 @@ h2 {
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{ STATIC_URL }}bootstrap/js/jquery-1.10.2.min.js"></script>
     <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
-
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-select.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('.selectpicker').selectpicker();
+        });
+    </script>   
   </body>
 </html>
 
