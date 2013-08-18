@@ -35,6 +35,7 @@ def home(request):
 
     page = request.GET.get("page",1)
     page_size = 10
+    max_items = 0
 
 
     search_query = request.GET.get('q', None)
@@ -46,11 +47,13 @@ def home(request):
 
     else:
 
-        cate_id = request.GET.get("cat_id",0)
-        if cate_id == 0:
-            companies = Company.objects.all().order_by("-id")[(page-1)*page_size:page*page_size ]
-        else:
-             companies = Company.objects.filter( category_id = cate_id ).order_by("-id")[(page-1)*page_size:page*page_size ]
+
+        companies = Company.objects.all().order_by("-id")[(page-1)*page_size:page*page_size ]
+        max_items +=  Company.objects.all().count()
+
+    max_page = max_items/page_size
+    if max_items%page_size > 0:
+        max_page += 1
 
 
     listA, listB = seperate_list(companies)
@@ -59,6 +62,7 @@ def home(request):
             'companies': companies,
             'listA': listA,
             'listB': listB,
+            'max_page':max_page,
 
             })
 
@@ -73,6 +77,7 @@ def category(request, categories):
 
     page = request.GET.get("page",1)
     page_size = 10
+    max_items = 0
 
     cats = categories.split(',')
     companies = []
@@ -80,8 +85,13 @@ def category(request, categories):
         category = Category.objects.get(slug = cat)
 
         new_list = Company.objects.filter( category_id = category.id ).order_by("-id")[(page-1)*page_size:page*page_size ]
+        max_items +=  Company.objects.filter( category_id = category.id ).count()
 
         companies += new_list
+
+    max_page = max_items/page_size
+    if max_items%page_size > 0:
+        max_page += 1
 
 
 
@@ -92,6 +102,7 @@ def category(request, categories):
             'companies': companies,
             'listA': listA,
             'listB': listB,
+            'max_page':max_page,
 
             })
 
