@@ -14,6 +14,7 @@ Startups.vn
     <!-- Le styles -->
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-select.css" rel="stylesheet">
     <style type="text/css">
 h2 {
     color: #1a70c5;
@@ -23,8 +24,10 @@ h2 {
     margin-left: 12px;
 }
 
+.navbar-search .search-query { background-color: rgb(230, 230, 230); width: 250px; }
 .second-navbar .nav > li > a:focus, .second-navbar .nav > li > a:hover { color: white; }
 .first-navbar { margin-bottom: 0px; }
+.first-navbar .navbar-inner { background: white; }
 .navbar-inner { 
     -webkit-border-radius: 0;      
     -moz-border-radius: 0;      
@@ -82,8 +85,10 @@ h2 {
                   </a>
                   <a class="brand" href="/">StartUps.vn</a>
                   <div class="nav-collapse collapse navbar-responsive-collapse">
+
                     <form class="navbar-search pull-left" action="/" method="GET">
-                      <input type="text" name="q" class="search-query span2" placeholder="Search">
+                      <input type="text" name="q" class="search-query span2" placeholder="for startups">
+
                     </form>
                     <ul class="nav pull-right">
 
@@ -197,7 +202,12 @@ h2 {
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{ STATIC_URL }}bootstrap/js/jquery-1.10.2.min.js"></script>
     <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
-
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-select.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('.selectpicker').selectpicker();
+        });
+    </script>   
   </body>
 </html>
 
