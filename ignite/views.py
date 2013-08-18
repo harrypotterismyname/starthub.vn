@@ -31,14 +31,26 @@ def seperate_list(companies):
 
 def home(request):
 
+
+
     page = request.GET.get("page",1)
     page_size = 10
 
-    cate_id = request.GET.get("cat_id",0)
-    if cate_id == 0:
-        companies = Company.objects.all().order_by("-id")[(page-1)*page_size:page*page_size ]
+
+    search_query = request.GET.get('q', None)
+
+     #TODO: implement search function
+    if search_query:
+        search_query = "%" + search_query + "%"
+        companies = Company.objects.filter( name__like = search_query ).order_by("-id")[(page-1)*page_size:page*page_size ]
+
     else:
-         companies = Company.objects.filter( category_id = cate_id ).order_by("-id")[(page-1)*page_size:page*page_size ]
+
+        cate_id = request.GET.get("cat_id",0)
+        if cate_id == 0:
+            companies = Company.objects.all().order_by("-id")[(page-1)*page_size:page*page_size ]
+        else:
+             companies = Company.objects.filter( category_id = cate_id ).order_by("-id")[(page-1)*page_size:page*page_size ]
 
 
     listA, listB = seperate_list(companies)
@@ -57,7 +69,7 @@ def home(request):
 def company(request, id):
     company = get_object_or_404(Company, pk=id)
 
-    team = company.teammember_set.a
+    team = company.teammember_set.all()
     founders = company.founders.all()
 
 
@@ -74,3 +86,15 @@ def company(request, id):
 
 
     return render_to_response('company.html', variables )
+
+
+
+def about_us(request):
+
+    variables = RequestContext(request, {
+
+
+            })
+
+
+    return render_to_response('aboutus.html', variables )

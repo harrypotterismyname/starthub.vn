@@ -55,12 +55,7 @@
       <!-- Example row of columns -->
       <div class="row">
 
-      {% if  not user.is_authenticated %}
-        <div class="alert alert-info">
-              <button type="button" class="close" data-dismiss="alert">×</button>
-              <strong><a href="/accounts/register/">Register</a></strong> or <a href="/accounts/login/">login</a> to start doing cool things.
-            </div>
-      {% endif %}
+        {% include "module/register_alert.html" %}
         <div class="span8">
         <div class="extraneous-non-semantic-markup">
           <h2>Product</h2>
