@@ -19,6 +19,9 @@ class Category(models.Model):
 
         super(Category, self).save(*args, **kwargs)
 
+    def get_url(self):
+        return "/category/" + self.slug + "/"
+
 
 
     def __unicode__(self):
