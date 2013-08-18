@@ -74,13 +74,16 @@ def category(request, categories):
     page = request.GET.get("page",1)
     page_size = 10
 
+    cats = categories.split(',')
+    companies = []
+    for cat in cats:
+        category = Category.objects.get(slug = cat)
+
+        new_list = Company.objects.filter( category_id = category.id ).order_by("-id")[(page-1)*page_size:page*page_size ]
+
+        companies += new_list
 
 
-    cate_id = request.GET.get("cat_id",0)
-    if cate_id == 0:
-        companies = Company.objects.all().order_by("-id")[(page-1)*page_size:page*page_size ]
-    else:
-         companies = Company.objects.filter( category_id = cate_id ).order_by("-id")[(page-1)*page_size:page*page_size ]
 
 
     listA, listB = seperate_list(companies)

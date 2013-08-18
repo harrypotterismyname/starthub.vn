@@ -11,6 +11,13 @@ def get_filestore_path(instance, filename):
 
 class Category(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
+    slug = models.CharField(max_length=255, default="", blank=True)
+
+    def save(self, *args, **kwargs):
+
+        self.slug = slugify(self.name)
+
+        super(Category, self).save(*args, **kwargs)
 
 
 
