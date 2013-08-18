@@ -11,11 +11,27 @@ def get_filestore_path(instance, filename):
 
 class Category(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
+
+
+
     def __unicode__(self):
             return self.name
 
 
 # Create your models here.
+
+
+
+class Person(models.Model):
+    name = models.CharField(max_length=255, default="", blank=True)
+    email = models.CharField(max_length=255, default="", blank=True)
+    bio = models.TextField( default="", blank=True)
+
+    def __unicode__(self):
+            return self.name
+
+
+
 class Company(models.Model):
     name = models.CharField(max_length=255, default="", blank=True)
     category = models.ForeignKey(Category)
@@ -30,6 +46,8 @@ class Company(models.Model):
     website = models.CharField(max_length=256,default="")
     logo = models.FileField(blank= True, null= True,upload_to=get_filestore_path)
 
+    founders = models.ManyToManyField(Person, through="Founder")
+
     def get_logo(self):
         return settings.S3STATIC_URL + str( self.logo)
 
@@ -40,20 +58,20 @@ class Company(models.Model):
         return "/company/" + str(self.id) + "-" + slugify(self.name) + "/"
 
 
-class Person(models.Model):
-    name = models.CharField(max_length=255, default="", blank=True)
-
-    def __unicode__(self):
-            return self.name
-
-
 class TeamMember(models.Model):
     member = models.ForeignKey(Person)
     company = models.ForeignKey(Company)
+
+    def __unicode__(self):
+            return self.member.name + " - " + self.company.name
 
 
 class Founder(models.Model):
     founder = models.ForeignKey(Person)
     company = models.ForeignKey(Company)
+    title = models.CharField(max_length=255, default="", blank=True)
+
+    def __unicode__(self):
+            return self.founder.name + " - " + self.company.name
 
 
