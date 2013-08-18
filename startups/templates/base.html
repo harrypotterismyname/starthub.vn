@@ -1,3 +1,4 @@
+{#{% load i18n %}#}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -104,9 +105,30 @@ h2 {
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><a href="#">English</a></li>
+
+
+{#              {% for lang in LANGUAGES %}#}
+	        <li>
+                <a href="#" onclick="document.setLangen.submit();return false;">English</a>
+                    <form name="setLangen" action="/i18n/setlang/" method="POST">{% csrf_token %}
+                        <input name="next" type="hidden" value="/" />
+                        <input type="hidden" name="language" value="en" />
+
+                    </form>
+                </li>
+                             <li>
+                                  <a href="#" onclick="document.setLangvi.submit();return false;">Tiếng Việt</a>
+                    <form name="setLangvi" action="/i18n/setlang/" method="POST">{% csrf_token %}
+                        <input name="next" type="hidden" value="/" />
+                        <input type="hidden" name="language" value="vi" />
+
+                    </form>
+                </li>
+{#            {% endfor %}#}
+
+                          <!--li><a href="#">English</a></li>
                           <li><a href="#">Vietnamese</a></li>
-                          <li class="divider"></li>
+                          <li class="divider"></li-->
                           <!--li><a href="#">I'm stupid</a></li-->
                         </ul>
                       </li>

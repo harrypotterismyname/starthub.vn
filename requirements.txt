@@ -12,3 +12,4 @@ django-storages
 django-inplaceedit
 django-gravatar
 django-registration
+django-modeltranslation
