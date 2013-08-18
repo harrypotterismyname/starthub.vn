@@ -31,7 +31,10 @@
           <div class="extraneous-non-semantic-markup">
             <h2><a href="{{ company.get_url }}">{{ company.name }}</a></h2>
             <p>{{ company.one_sentence_description }}</p>
-            <div class="tags"><span>New York City</span> <span>New York City</span> <span>New York City</span> </div>
+            <div class="tags"><span>
+
+                {{ company.address }}
+            </span> </div>
           </div>
         </div>
         <div class="span3">
@@ -51,24 +54,36 @@
 
       <!-- Example row of columns -->
       <div class="row">
+
+      {% if  not user.is_authenticated %}
         <div class="alert alert-info">
               <button type="button" class="close" data-dismiss="alert">×</button>
-              <strong>Register</strong> or login to start doing cool things.
+              <strong><a href="/accounts/register/">Register</a></strong> or <a href="/accounts/login/">login</a> to start doing cool things.
             </div>
+      {% endif %}
         <div class="span8">
         <div class="extraneous-non-semantic-markup">
           <h2>Product</h2>
           <p>{{ company.description }} </p>
           <p><a class="btn" href="#">View details »</a></p>
+            <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+
         </div>
-        <div class="extraneous-non-semantic-markup">
-          <h2>Funding</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-        </div>
+
+            {% if  company.funding %}
+                <div class="extraneous-non-semantic-markup">
+                  <h2>Funding</h2>
+                  <p>
+
+                      {{ company.funding }}
+                  </p>
+                </div>
+
+            {% endif %}
+         </div>
         <div class="span4">
         <div class="extraneous-non-semantic-markup">
           <h2>Overview</h2>
@@ -81,9 +96,9 @@
           <!--p><a class="btn" href="#">View details »</a></p-->
         </div>
         <div class="extraneous-non-semantic-markup">
-          <h2>Founders & Management Team</h2>
+          <h2>Founders & Team</h2>
 
-            {% for founder in company.founders.all %}
+            {% for founder in team %}
             <div class="media">
               <a class="pull-left" href="#">
 

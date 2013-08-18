@@ -46,7 +46,10 @@ class Company(models.Model):
     website = models.CharField(max_length=256,default="")
     logo = models.FileField(blank= True, null= True,upload_to=get_filestore_path)
 
+    funding = models.TextField(default='', blank=True, null= True)
+
     founders = models.ManyToManyField(Person, through="Founder")
+    #members = models.ManyToManyField(Person, through="TeamMember")
 
     def get_logo(self):
         return settings.S3STATIC_URL + str( self.logo)
