@@ -153,6 +153,7 @@ INSTALLED_APPS = (
       'storages',
      'inplaceeditform',
      'gravatar',
+    'registration',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -257,3 +258,5 @@ INPLACEEDIT_DISABLE_CLICK = True  # For inplace edit text into a link tag
 INPLACEEDIT_EDIT_MESSAGE_TRANSLATION = 'Write a translation' # transmeta option
 DEFAULT_INPLACE_EDIT_OPTIONS = {} # dictionnary of the optionals parameters that the templatetag can receive to change its behavior (see the Advanced usage section)
 DEFAULT_INPLACE_EDIT_OPTIONS_ONE_BY_ONE = True # modify the behavior of the DEFAULT_INPLACE_EDIT_OPTIONS usage, if True then it use the default values not specified in your template, if False it uses these options only when the dictionnary is empty (when you do put any options in your template)
+
+ACCOUNT_ACTIVATION_DAYS = 8 # One-week activation window; you may, of course, use a different value.
