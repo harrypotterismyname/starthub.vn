@@ -6,7 +6,11 @@
 {% if error_message %}
 <p class="errornote">{{ error_message }}</p>
 {% endif %}
-<div id="content-main">
+
+<style>
+#content-main-login { padding: 50px; background: white; }
+</style>
+<div id="content-main-login">
     <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
   <div class="form-row">
     <label for="id_username">{% trans 'Username:' %}</label>
@@ -18,7 +22,7 @@
     <input type="hidden" name="this_is_the_login_form" value="1" />
   </div>
   <div class="submit-row">
-    <label>&nbsp;</label><input type="submit" value="{% trans 'Log in' %}" />
+    <label>&nbsp;</label><input type="submit" class="btn btn-success" value="{% trans 'Log in' %}" />
   </div>
 </form>
 

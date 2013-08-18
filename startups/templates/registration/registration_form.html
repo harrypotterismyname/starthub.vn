@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
-
-
-
    {% block title %}
 Activate!
 {% endblock %}
 {% block content %}
 
+<style>
+#content-main-registration { padding: 50px; background: white; }
+</style>
 
+<div id="content-main-registration">
          <h2>Register</h2>
         <form action="/accounts/register/" method="POST">{% csrf_token %}
             <table>
@@ -18,5 +19,7 @@ Activate!
             <input type="submit" value="Submit" class="btn btn-success" />
         </p>
         </form>
+</div>
 
 {% endblock %}
+
