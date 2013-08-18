@@ -31,7 +31,15 @@ def seperate_list(companies):
 
 def home(request):
 
-    companies = Company.objects.all().order_by("?")
+    page = request.GET.get("page",1)
+    page_size = 10
+
+    cate_id = request.GET.get("cat_id",0)
+    if cate_id == 0:
+        companies = Company.objects.all().order_by("-id")[(page-1)*page_size:page*page_size ]
+    else:
+         companies = Company.objects.filter( category_id = cate_id ).order_by("-id")[(page-1)*page_size:page*page_size ]
+
 
     listA, listB = seperate_list(companies)
 
@@ -49,7 +57,7 @@ def home(request):
 def company(request, id):
     company = get_object_or_404(Company, pk=id)
 
-    team = company.teammember_set.all()
+    team = company.teammember_set.a
     founders = company.founders.all()
 
 
