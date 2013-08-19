@@ -106,10 +106,10 @@ def category(request, categories):
 
 
 
-    listA, listB = seperate_list(companies)
+    listA, listB = seperate_list(company_list)
 
     variables = RequestContext(request, {
-            'companies': companies,
+            #'companies': companies,
             'listA': listA,
             'listB': listB,
              'page':page,
