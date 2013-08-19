@@ -44,7 +44,7 @@ def home(request):
 
      #TODO: implement search function
     if search_query:
-       
+
         companies = Company.objects.filter( name__contains = search_query ).order_by("-id")#[(page-1)*page_size:page*page_size ]
 
     else:
