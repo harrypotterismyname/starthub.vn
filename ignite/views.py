@@ -1,4 +1,6 @@
 # Create your views here.
+
+from django.core.paginator import Paginator
 from django.shortcuts import  render_to_response
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
@@ -43,26 +45,33 @@ def home(request):
      #TODO: implement search function
     if search_query:
         search_query = "%" + search_query + "%"
-        companies = Company.objects.filter( name__like = search_query ).order_by("-id")[(page-1)*page_size:page*page_size ]
+        companies = Company.objects.filter( name__like = search_query ).order_by("-id")#[(page-1)*page_size:page*page_size ]
 
     else:
 
 
-        companies = Company.objects.all().order_by("-id")[(page-1)*page_size:page*page_size ]
-        max_items +=  Company.objects.all().count()
+        companies = Company.objects.all().order_by("-id")#[(page-1)*page_size:page*page_size ]
+        #max_items +=  Company.objects.all().count()
 
-    max_page = max_items/page_size
-    if max_items%page_size > 0:
-        max_page += 1
+    # max_page = max_items/page_size
+    # if max_items%page_size > 0:
+    #     max_page += 1
+
+    p = Paginator(companies, page_size)
+
+    current_page = p.page(page)
+    company_list = current_page.object_list
 
 
-    listA, listB = seperate_list(companies)
+    listA, listB = seperate_list(company_list)
 
     variables = RequestContext(request, {
             'companies': companies,
             'listA': listA,
             'listB': listB,
-            'max_page':max_page,
+            'page':page,
+            'paging': p,
+            'current_page': current_page,
 
             })
 
@@ -77,21 +86,22 @@ def category(request, categories):
 
     page = request.GET.get("page",1)
     page_size = 10
-    max_items = 0
+    #max_items = 0
 
     cats = categories.split(',')
     companies = []
     for cat in cats:
         category = Category.objects.get(slug = cat)
 
-        new_list = Company.objects.filter( category_id = category.id ).order_by("-id")[(page-1)*page_size:page*page_size ]
-        max_items +=  Company.objects.filter( category_id = category.id ).count()
+        new_list = Company.objects.filter( category_id = category.id ).order_by("-id")#[(page-1)*page_size:page*page_size ]
+        #max_items +=  Company.objects.filter( category_id = category.id ).count()
 
         companies += new_list
 
-    max_page = max_items/page_size
-    if max_items%page_size > 0:
-        max_page += 1
+    p = Paginator(companies, page_size)
+
+    current_page = p.page(page)
+    company_list = current_page.object_list
 
 
 
@@ -102,7 +112,10 @@ def category(request, categories):
             'companies': companies,
             'listA': listA,
             'listB': listB,
-            'max_page':max_page,
+             'page':page,
+            'paging': p,
+            'current_page': current_page,
+            'category': category
 
             })
 

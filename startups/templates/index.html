@@ -110,24 +110,14 @@ font-size: 25px;
         <div class="clear" style=" clear: both; "></div>
       </div>
 
+           {% if category %}
 
-            <div class="extraneous-non-semantic-markup" style="
-    border-top: 3px solid #dfebf7;
-">
-<div class="pagination" style="
-    text-align: center;
-">
-              <ul>
-                <li><a href="#">«</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">»</a></li>
-              </ul>
-            </div> 
-            </div>
+           {% include "module/paging_category.html" %}
+
+            {% else %}
+                {% include "module/paging.html" %}
+
+        {% endif %}
 
         </div>
         

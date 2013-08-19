@@ -1,0 +1,21 @@
+ <div class="extraneous-non-semantic-markup" style="
+    border-top: 3px solid #dfebf7;
+">
+<div class="pagination" style="
+    text-align: center;
+">
+              <ul>
+                  {% if current_page.has_previous %}
+                <li><a href="/?page={{ current_page.previous_page_number }}">«</a></li>
+                  {% endif %}
+
+
+                    <li><a href="javascript:void(0)" class=" ui-state-disabled">Page {{ current_page.number }} of {{ paging.num_pages }}. </a></li>
+
+              {% if current_page.has_next %}
+                <li><a href="/?page={{ current_page.next_page_number }}">»</a></li>
+              {% endif %}
+
+              </ul>
+            </div>
+            </div>
