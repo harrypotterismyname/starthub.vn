@@ -3,6 +3,9 @@ from django.utils.text import  slugify
 import uuid
 from startups import settings
 
+
+
+
 def get_filestore_path(instance, filename):
     ext = filename.split('.')[-1]
     filename = "our-humble-logo/%s.%s" % (uuid.uuid4(), ext)

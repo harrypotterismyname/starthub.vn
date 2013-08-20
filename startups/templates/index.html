@@ -12,10 +12,7 @@
 
       <!-- Example row of columns -->
       <div class="row">
-        <div class="alert alert-info">
-              <button type="button" class="close" data-dismiss="alert">×</button>
-              <strong>Register</strong> or login to start doing cool things.
-        </div>
+      {% include "module/register_alert.html" %}
         <div class="span12">
             <div class="extraneous-non-semantic-markup" style="
     margin: 0 80px 20px 80px;
@@ -112,24 +109,14 @@ font-size: 25px;
         <div class="clear" style=" clear: both; "></div>
       </div>
 
+           {% if category %}
 
-            <div class="extraneous-non-semantic-markup" style="
-    border-top: 3px solid #dfebf7;
-">
-<div class="pagination" style="
-    text-align: center;
-">
-              <ul>
-                <li><a href="#">«</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">»</a></li>
-              </ul>
-            </div> 
-            </div>
+           {% include "module/paging_category.html" %}
+
+            {% else %}
+                {% include "module/paging.html" %}
+
+        {% endif %}
 
         </div>
         

@@ -27,4 +27,6 @@ urlpatterns = patterns('',
 
 
       (r'^accounts/', include('registration.backends.default.urls')),
+          (r'^i18n/', include('django.conf.urls.i18n')),
+
 )

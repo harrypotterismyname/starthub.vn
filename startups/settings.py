@@ -41,6 +41,13 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
+gettext = lambda s: s
+LANGUAGES = (
+
+    ('en', gettext('English')),
+    ('vi', gettext('Vietnamese')),
+)
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -123,6 +130,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django.middleware.locale.LocaleMiddleware',
+
 )
 
 ROOT_URLCONF = 'startups.urls'
@@ -154,6 +163,7 @@ INSTALLED_APPS = (
      'inplaceeditform',
      'gravatar',
     'registration',
+      'modeltranslation',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -200,7 +210,6 @@ ALLOWED_HOSTS = ['*']
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
