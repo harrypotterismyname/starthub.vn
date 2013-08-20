@@ -205,7 +205,12 @@ h2 {
     <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-select.js"></script>
     <script>
         $(document).ready(function() {
-          $('.selectpicker').selectpicker();
+            $('.selectpicker').selectpicker();
+            $('button.btn-success').click(function() { 
+                var tags = $(this).siblings('.bootstrap-select').find('.dropdown-menu li.selected span.text');
+                var urlarg = $.map(tags, function(x){return $(x).text()}).join(','); 
+                window.location.href = '/category/' + urlarg;
+            });
         });
     </script>   
   </body>
