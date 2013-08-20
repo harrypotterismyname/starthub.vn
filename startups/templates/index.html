@@ -11,16 +11,18 @@
 ">
 
       <!-- Example row of columns -->
+      {% if categories %}
       <div class="row">
-      {% include "module/register_alert.html" %}
+
         <div class="span12">
+          {% include "module/register_alert.html" %}
             <div class="extraneous-non-semantic-markup" style="
     margin: 0 80px 20px 80px;
 ">
               <h2>Companies you will find here</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-            {% if categories %}
+
                 <select class="selectpicker" multiple data-selected-text-format="count>3">
 
                     {% for cat in categories %}
@@ -28,12 +30,13 @@
                     {% endfor %}
                 </select>
 
-            {% endif %}
+
 
            
            <button class="btn btn-success">View</button>
      
-            </div>        
+            </div>
+          {% endif %}
 
 <style>
 .hp-company-column.span6 {
