@@ -91,3 +91,11 @@ class Founder(models.Model):
             return self.founder.name + " - " + self.company.name
 
 
+class Meta_info(models.Model):
+    slug = models.CharField(default="", max_length= 256)
+    content = models.TextField(default="")
+
+    def __unicode__(self):
+        return  self.slug
+
+

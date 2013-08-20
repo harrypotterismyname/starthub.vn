@@ -163,7 +163,7 @@ h2 {
 ">Home</a></li>
 
                       
-  <li><a href="/about-us/">About Us</a></li>
+  <li><a href="/#about-us">About Us</a></li>
                       
                     </ul>
                     
@@ -187,18 +187,20 @@ h2 {
     margin: 0;
 ">
         <div class="container">
-          <div class=""><h2>About Us</h2>
+          <div id="about-us" class=""><h2>About Us</h2>
   <p>
 
+      {{ aboutus_homepage.content|safe }}
 
-     Startups.vn is the free library of startups in Vietnam, including information about founders, investors, team .
+      {% if user.is_staff %}
+          <a href="/admin/ignite/meta_info/">[edit]</a>
+      {% endif %}
+
 
 
 
   </p>
-              <p>
-                  You can also add new startups into the site.
-              </p>
+
 
           </div>
         </div>

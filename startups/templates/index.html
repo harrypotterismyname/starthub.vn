@@ -19,8 +19,15 @@
             <div class="extraneous-non-semantic-markup" style="
     margin: 0 80px 20px 80px;
 ">
-              <h2>Companies you will find here</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+              <p>
+                      {{ head_description.content|safe }}
+
+                      {% if user.is_staff %}
+                          <a href="/admin/ignite/meta_info/">[edit]</a>
+                      {% endif %}
+
+              </p>
 
 
                 <select class="selectpicker" multiple data-selected-text-format="count>3">

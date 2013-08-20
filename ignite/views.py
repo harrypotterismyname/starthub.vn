@@ -33,7 +33,12 @@ def seperate_list(companies):
 
 def home(request):
 
-
+    try:
+        aboutus_homepage = Meta_info.objects.get( slug = "aboutus_homepage")
+        head_description =  Meta_info.objects.get( slug = "head_description")
+    except:
+        aboutus_homepage = None
+        head_description = None
 
     page = request.GET.get("page",1)
     page_size = 10
@@ -75,6 +80,8 @@ def home(request):
             'paging': p,
             'current_page': current_page,
             'categories': categories,
+            'aboutus_homepage': aboutus_homepage,
+            'head_description': head_description,
 
             })
 

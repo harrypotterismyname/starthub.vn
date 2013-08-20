@@ -11,5 +11,6 @@ admin.site.register(Person)
 admin.site.register(TeamMember)
 admin.site.register(Founder)
 admin.site.register(Category)
+admin.site.register(Meta_info)
 
 
