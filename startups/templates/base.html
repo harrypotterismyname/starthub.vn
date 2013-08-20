@@ -232,7 +232,7 @@ h2 {
         $(document).ready(function() {
             $('.selectpicker').selectpicker();
             $('button.btn-success').click(function() { 
-                var tags = $(this).siblings('.bootstrap-select').find('.dropdown-menu li.selected span.value');
+                var tags = $(this).siblings('.bootstrap-select').find('.dropdown-menu li.selected span.text');
                 var urlarg = $.map(tags, function(x){return $(x).text()}).join(','); 
                 window.location.href = '/category/' + urlarg;
             });
