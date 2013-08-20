@@ -39,6 +39,8 @@ def home(request):
     page_size = 10
     max_items = 0
 
+    categories = Category.objects.all()
+
 
     search_query = request.GET.get('q', None)
 
@@ -72,6 +74,7 @@ def home(request):
             'page':page,
             'paging': p,
             'current_page': current_page,
+            'categories': categories,
 
             })
 
@@ -87,6 +90,9 @@ def category(request, categories):
     page = request.GET.get("page",1)
     page_size = 10
     #max_items = 0
+
+    categories = categories.lower()
+
 
     cats = categories.split(',')
     companies = []

@@ -20,14 +20,15 @@
               <h2>Companies you will find here</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-    <select class="selectpicker" multiple data-selected-text-format="count>3">
-      <option>E-commerce</option>
-      <option>Mobile</option>
-      <option>Location</option>
-      <option>Education</option>
-      <option>Transportation</option>
-      <option>Adult</option>
-    </select>
+            {% if categories %}
+                <select class="selectpicker" multiple data-selected-text-format="count>3">
+
+                    {% for cat in categories %}
+                  <option value="{{ cat.slug }}" >{{ cat.name }}</option>
+                    {% endfor %}
+                </select>
+
+            {% endif %}
 
            
            <button class="btn btn-success">View</button>
