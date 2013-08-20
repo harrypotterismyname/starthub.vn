@@ -64,6 +64,12 @@ class Company(models.Model):
     founders = models.ManyToManyField(Person, through="Founder")
     #members = models.ManyToManyField(Person, through="TeamMember")
 
+    def get_web(self):
+        if self.website.find('http'):
+            return self.website
+        else:
+            return "http://" + self.website
+
     def get_logo(self):
         return settings.S3STATIC_URL + str( self.logo)
 

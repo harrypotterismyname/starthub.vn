@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="span3">
-           <div class="extraneous-non-semantic-markup" style="margin-top: 20px"><a href="{{ company  }}" class="btn btn-primary btn-large">Learn more »</a></div>
+           <div class="extraneous-non-semantic-markup" style="margin-top: 20px"><a href="{{ company.get_web  }}" class="btn btn-primary btn-large">Learn more »</a></div>
         </div>
       </div>
     </div><!-- /container -->
@@ -84,7 +84,7 @@
           <h2>Overview</h2>
           <ul class="overview-fields">
             <li><span class="li-field">Location</span><span class="li-value">{{ company.address }}</span></li>
-            <li><span class="li-field">Web</span><a href="{{ company.website }}"><span class="li-value">{{ company.website }}</span></a></li>
+            <li><span class="li-field">Web</span><a href="{{ company.get_web }}"><span class="li-value">{{ company.website }}</span></a></li>
             <li><span class="li-field">Category</span><span class="li-value">
                 <a href="{{ company.category.get_url }}">
                 {{ company.category.name }}
