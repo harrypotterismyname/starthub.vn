@@ -113,7 +113,7 @@ h2 {
 	        <li>
                 <a href="#" onclick="document.setLangen.submit();return false;">English</a>
                     <form name="setLangen" action="/i18n/setlang/" method="POST">{% csrf_token %}
-                        <input name="next" type="hidden" value="{{ request.path }}" />
+                        <input name="next" type="hidden" value="{{ request.path }}?lang=en" />
                         <input type="hidden" name="language" value="en" />
 
                     </form>
