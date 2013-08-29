@@ -22,7 +22,11 @@
 ">
 
 <p>
-Lorem ipsizzle dolor fo shizzle my nizzle my shizz, bow wow wow adipiscing you son of a bizzle. Nullizzle sapizzle velit, aliquet fo shizzle mah nizzle fo rizzle, mah home g-dizzle, tellivizzle the bizzle, tellivizzle vel, sure. Pellentesque eget tortor. Sed eros. Nizzle sheezy break yo neck, yall dapibus turpis you son of a bizzle izzle. Mauris pellentesque nibh sizzle that's the shizzle. Boom shackalack izzle gangster. Fizzle pimpin' rhoncizzle funky fresh. In hizzle habitasse yippiyo dictumst. Go to hizzle dapibizzle. Fo shizzle my nizzle fo shizzle my nizzle urna, pretizzle dizzle, cool ac, eleifend vitae, nunc. Yo things. Shiznit sempizzle velit cool shizznit.
+
+    {{ full_aboutus.content }}
+    {% if user.is_staff %}
+          <a href="/admin/ignite/meta_info/">[edit]</a>
+      {% endif %}
 </p>
 	</div>
 	</div>

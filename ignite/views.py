@@ -172,10 +172,18 @@ def thanks(request):
 
 def about_us(request):
 
+    #company = get_object_or_404(Company, pk=id)
+    try:
+        full_aboutus = Meta_info.objects.get(slug = "full_aboutus")
+    except:
+        full_aboutus = ""
+
     variables = RequestContext(request, {
 
-
+               'full_aboutus': full_aboutus,
             })
+
+
 
 
     return render_to_response('aboutus.html', variables )

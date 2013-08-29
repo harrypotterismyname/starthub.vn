@@ -95,13 +95,18 @@ width: 200px;
                       <input type="text" name="q" class="search-query span2" placeholder="for startups">
 
                     </form>
+
+                    {% if categories %}
                     <select class="selectpicker" multiple data-selected-text-format="count>3">
 
                         {% for cat in categories %}
                       <option value="{{ cat.slug }}" >{{ cat.slug }}</option>
                         {% endfor %}
                     </select>
-                    <button class="btn btn-success btn-success-viewstartups">View</button>
+                          <button class="btn btn-success btn-success-viewstartups">View</button>
+
+                  {% endif %}
+
 
 
                     
