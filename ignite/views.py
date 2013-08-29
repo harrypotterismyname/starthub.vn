@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
-
+from ignite.forms import AddCompanyForm
 
 from ignite.models import *
 from itertools import chain
@@ -160,6 +160,15 @@ def company(request, id):
     return render_to_response('company.html', variables )
 
 
+def thanks(request):
+
+    variables = RequestContext(request, {
+
+
+            })
+
+
+    return render_to_response('thanks.html', variables )
 
 def about_us(request):
 
@@ -170,3 +179,27 @@ def about_us(request):
 
 
     return render_to_response('aboutus.html', variables )
+
+def add_your_company(request):
+
+    if request.method == 'POST': # If the form has been submitted...
+        form = AddCompanyForm(request.POST) # A form bound to the POST data
+        if form.is_valid(): # All validation rules pass
+            ins = form.save()
+            ins.is_private = True
+            ins.save()
+            # Process the data in form.cleaned_data
+            # ...
+            return HttpResponseRedirect('/thanks/') # Redirect after POST
+    else:
+        form = AddCompanyForm() # An unbound form
+
+
+
+    variables = RequestContext(request, {
+
+               'form': form,
+            })
+
+
+    return render_to_response('add_your_company.html', variables )

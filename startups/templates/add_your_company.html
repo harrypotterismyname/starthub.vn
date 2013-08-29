@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% load gravatar %}
+
+   {% block title %}
+Add your company
+{% endblock %}
+
+
+{% block content %}
+    <style>#content-main-login { padding: 50px; background: white; }</style>
+    <div id="content-main-login">
+
+    <h3>Add your company</h3>
+    <form method="POST">
+{% csrf_token %}
+{{ form.as_table }}
+<p>
+        <input type="submit" value="Submit" class="btn btn-success" />
+        </p>
+        </form>
+    </div>
+
+{% endblock %}
