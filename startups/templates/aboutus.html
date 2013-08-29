@@ -23,7 +23,7 @@
 
 <p>
 
-    {{ full_aboutus.content }}
+    {{ full_aboutus.content|safe }}
     {% if user.is_staff %}
           <a href="/admin/ignite/meta_info/">[edit]</a>
       {% endif %}
