@@ -29,11 +29,11 @@
         </div>
   <div class="span5">
           <div class="extraneous-non-semantic-markup">
-            <h2><a href="{{ company.get_url }}">{{ company.name }}</a></h2>
+            <h2><a href="{{ company.get_url|safe }}">{{ company.name }}</a></h2>
             <p>{{ company.one_sentence_description }}</p>
             <div class="tags"><span>
 
-                {{ company.address }}
+                {{ company.category }}
             </span> </div>
           </div>
         </div>
@@ -84,9 +84,9 @@
           <h2>Overview</h2>
           <ul class="overview-fields">
             <li><span class="li-field">Location</span><span class="li-value">{{ company.address }}</span></li>
-            <li><span class="li-field">Web</span><a href="{{ company.get_web }}"><span class="li-value">{{ company.website }}</span></a></li>
+            <li><span class="li-field">Web</span><a href="{{ company.get_web  }}"><span class="li-value">{{ company.website }}</span></a></li>
             <li><span class="li-field">Category</span><span class="li-value">
-                <a href="{{ company.category.get_url }}">
+                <a href="{{ company.category.get_url|safe }}">
                 {{ company.category.name }}
                 </a>
             </span></li>

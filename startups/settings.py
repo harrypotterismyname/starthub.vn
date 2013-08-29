@@ -89,6 +89,9 @@ STATIC_URL = 'http://humblefiles.startups.vn/'
 S3STATIC_URL = STATIC_URL
 
 
+
+
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
