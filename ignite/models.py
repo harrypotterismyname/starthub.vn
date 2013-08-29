@@ -76,7 +76,10 @@ class Company(models.Model):
         #     return "http://" + self.website
 
     def get_logo(self):
-        return settings.S3STATIC_URL + str( self.logo)
+        if str(self.logo):
+            return 0 # settings.S3STATIC_URL + str( self.logo)
+        else:
+            return 0
 
     def __unicode__(self):
             return self.name
