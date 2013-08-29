@@ -67,6 +67,17 @@
 
         </div>
 
+        <div class="extraneous-non-semantic-markup">
+          <h2>News</h2>
+          <p>{% if company.news %} {{ company.news }} {% else %} Nothing newsworthy. {% endif %} </p>
+          <!--p><a class="btn" href="#">View details »</a></p-->
+            <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+
+        </div>
+
             {% if  company.funding %}
                 <div class="extraneous-non-semantic-markup">
                   <h2>Funding</h2>
@@ -89,7 +100,7 @@
                 {{ company.category.name }}
                 </a>
             </span></li>
-            <li><span class="li-field">Founded</span><span class="li-value">{{ company.start_year }}</span></li>
+            <li><span class="li-field">Founded</span><span class="li-value">{{ company.founding_year }}</span></li>
           </ul>
           <!--p><a class="btn" href="#">View details »</a></p-->
         </div>
