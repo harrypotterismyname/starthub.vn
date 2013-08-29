@@ -61,6 +61,20 @@ height: 150px;
 .hp-company h2 {
 font-size: 25px;
 }
+.hp-company-details {
+padding-right: 20px;
+}
+.hp-company-image {
+    margin-left: 0;
+    margin-right: 12px;
+}
+.hp-company .img-empty {
+background-color: #eee;
+width: 170px;
+height: 125px;
+border: 4px dotted #aaa;
+}
+
 </style>
       <div class="xxxextraneous-non-semantic-markup" style="
     background-color: white;
@@ -74,11 +88,12 @@ font-size: 25px;
 
 
         <div class="hp-company span6">
-          <div class="span2">  <img src="{{ company.get_logo }}" style="max-width: 170px;"/></div>
+          <div class="span2 hp-company-image">  {% if company.get_logo %} <img src="{{ company.get_logo }}" style="max-width: 170px;"/> {% else %} <div class="img-empty"></div> {% endif %}
+          </div>
           <div class="span4">
               <a href="{{ company.get_url }}"> <h2>  {{ company.name }}</h2>  </a>
 
-              {{ company.one_sentence_description }}
+              <div class="hp-company-details">{{ company.one_sentence_description }}</div>
           </div>
         </div>
 
@@ -102,11 +117,12 @@ font-size: 25px;
 
 
         <div class="hp-company span6">
-          <div class="span2">  <img src="{{ company.get_logo }}" style="max-width: 170px;"/></div>
+          <div class="span2 hp-company-image">  {% if company.get_logo %} <img src="{{ company.get_logo }}" style="max-width: 170px;"/> {% else %} <div class="img-empty"></div> {% endif %}
+          </div>
           <div class="span4">
               <a href="{{ company.get_url }}"> <h2>  {{ company.name }}</h2>  </a>
 
-              {{ company.one_sentence_description }}
+              <div class="hp-company-details">{{ company.one_sentence_description }}</div>
           </div>
         </div>
 
