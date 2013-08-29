@@ -77,9 +77,9 @@ class Company(models.Model):
 
     def get_logo(self):
         if str(self.logo):
-            return 0 # settings.S3STATIC_URL + str( self.logo)
+            return  settings.S3STATIC_URL + str( self.logo)
         else:
-            return 0
+            return "http://cl.ly/image/0R121G0A0H0D/Screen%20Shot%202013-08-29%20at%208.47.11%20PM.png"
 
     def __unicode__(self):
             return self.name
