@@ -13,7 +13,9 @@ urlpatterns = patterns('',
      url(r'^company/(?P<id>\d+)-(.+)/', company),
      url(r'^category/(?P<categories>.+)/$', category),
      url(r'^category/(?P<categories>.+)$', category),
-     url(r'^about-us/$', about_us),
+     url(r'^about-us/$', about_us ),
+      url(r'^add-your-company/$', add_your_company),
+      url(r'^thanks/$', thanks),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
