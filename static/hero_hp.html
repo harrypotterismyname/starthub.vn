@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+h2 {
+    color: #1a70c5;
+    font-size: 21px;
+}
+[class*="span"] {
+    margin-left: 12px;
+}
+
+.second-navbar .nav > li > a:focus, .second-navbar .nav > li > a:hover { color: white; }
+.first-navbar { margin-bottom: 0px; }
+.navbar-inner { 
+    -webkit-border-radius: 0;      
+    -moz-border-radius: 0;      
+    border-radius: 0;      
+}
+.second-navbar { background-color: #1a70c5; margin-bottom: 0; }
+.second-navbar .nav > li > a { text-shadow: none; color: #f1f1f1; }
+.second-navbar .nav > .active > a, .second-navbar .nav > .active > a:hover, .second-navbar .nav > .active > a:focus { color: #f1f1f1; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; }
+.navbar-inner { border: none; }
+
+.tags span {
+    color: #e6e6e6;
+    font-size: 12px;
+}
+
+.extraneous-non-semantic-markup {
+    padding: 20px;
+    background: white;
+    margin-bottom: 12px;
+}
+
+.overview-fields { margin: 0; }
+.overview-fields li { list-style-type: none; }
+.overview-fields .li-field {
+    width: 150px;
+    display: inline-block;
+    color: #9b9b9b;
+}
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="bootstrap/ico/favicon.png">
+  </head>
+
+  <body style="
+    background-color: #e6e6e6;
+">
+
+  <div class="first-navbar navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <a class="brand" href="#">StartUp.vn</a>
+                  <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <form class="navbar-search pull-left" action="">
+                      <input type="text" class="search-query span2" placeholder="Search">
+                    </form>
+                    <ul class="nav pull-right">
+                      <li><a href="#">Login</a></li>
+                      <li class="divider-vertical"></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">English</a></li>
+                          <li><a href="#">Vietnamese</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">I'm stupid</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div>
+
+<div class="second-navbar navbar">
+              <div class="navbar-inner" style="
+    background-color: #1a70c5;
+    background-image: none;
+">
+
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse" style="
+">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  
+                  <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav">
+                      <li class="active" style="
+"><a href="#" style="
+    background-image: none;
+    background-color: #1f7fdf;
+">Home</a></li>
+                      <li><a href="#">Agenda</a></li>
+                      
+  <li><a href="#">Speakers</a></li>
+  <li><a href="#">Speakers</a></li>
+  <li><a href="#">Speakers</a></li><li><a href="#">About Us</a></li>
+                      
+                    </ul>
+                    
+                    
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div>
+            
+    
+ <div class="container" style="
+    background-color: white;
+    width: auto;
+    margin-bottom: 20px;
+">
+      <div class="row" style="
+    margin: 0;
+">
+        <div class="span1">
+          <div class="extraneous-non-semantic-markup">
+          </div>
+        </div>
+  <div class="span2">
+          <div class="extraneous-non-semantic-markup">
+            <a href="#" class="thumbnail">
+                  <img data-src="holder.js/260x180" alt="260x180" style="width: 260px; height: 180px;" src="data:image/png;base64,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">
+                </a>
+          </div>
+        </div>
+  <div class="span5">
+          <div class="extraneous-non-semantic-markup">
+            <h2>Artsy</h2>
+            <p> Spotify for the art world</p>
+            <div class="tags"><span>New York City</span> <span>New York City</span> <span>New York City</span> </div>
+          </div>
+        </div>
+        <div class="span3">
+           <div class="extraneous-non-semantic-markup" style="margin-top: 20px"><a href="#" class="btn btn-primary btn-large">Learn more »</a></div>
+        </div>
+      </div>
+    </div><!-- /container -->
+
+
+    <div class="container">
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit" style="display: none;">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="alert alert-info">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>Register</strong> or login to start doing cool things.
+            </div>
+        <div class="span8">
+        <div class="extraneous-non-semantic-markup">
+          <h2>Product</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details »</a></p>
+        </div>
+        <div class="extraneous-non-semantic-markup">
+          <h2>Funding</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+        </div>
+        <div class="span4">
+        <div class="extraneous-non-semantic-markup">
+          <h2>Overview</h2>
+          <ul class="overview-fields">
+            <li><span class="li-field">Country</span><span class="li-value">Russia</span></li>
+            <li><span class="li-field">Web</span><span class="li-value">www.foo.com</span></li>
+            <li><span class="li-field">Category</span><span class="li-value">E-commerce</span></li>
+            <li><span class="li-field">Founded</span><span class="li-value">2012</span></li>
+          </ul>
+          <p><a class="btn" href="#">View details »</a></p>
+        </div>
+        <div class="extraneous-non-semantic-markup">
+          <h2>Founders</h2>
+<div class="media">
+              <a class="pull-left" href="#">
+                <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Viet Hong</h4>
+                Cras sit amet nibh libero, in gravida nulla. 
+              </div>
+            </div>          
+<div class="media">
+              <a class="pull-left" href="#">
+                <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Le Viet Hong</h4>
+                Cras sit amet nibh libero, in gravida nulla. 
+              </div>
+            </div>          
+<div class="media">
+              <a class="pull-left" href="#">
+                <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Hong Viet Le</h4>
+                Cras sit amet nibh libero, in gravida nulla. 
+              </div>
+            </div>          
+          <p><a placeholderass="btn" href="#">View details »</a></p>
+        </div>
+        </div>
+      </div>
+
+
+    </div> <!-- /container -->
+
+<footer>
+<div class="container" style="
+    background-color: #f1f1f1;
+    width: auto;
+">
+      <div class="row" style="
+    margin: 0;
+">
+        <div class="container">
+          <div class=""><h2>About Us</h2>
+  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+  <p>Blah blah blah</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="container" style="
+    background-color: #1a70c5;
+    width: auto;
+    color: white;
+    padding: 15px;
+">
+      <div class="row" style="
+    margin: 0;
+">
+        <div class="container">
+  <p>Copyright &copy;  2013 Startup.vn Hackerz</p>
+        </div>
+      </div>
+    </div>    
+</footer>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap/js/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+
+  </body>
+</html>
+

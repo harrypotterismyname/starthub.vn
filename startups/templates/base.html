@@ -95,10 +95,6 @@ h2 {
 
                         {% if user.is_authenticated %}
                            <li><a href="/accounts/logout/">Log out</a></li>
-                        {% else %}
-                              <li><a href="/accounts/login/">Login</a></li>
-                             <li><a href="/accounts/register/">Register</a></li>
-
                         {% endif %}
 
                       <li class="divider-vertical"></li>
@@ -234,7 +230,10 @@ h2 {
         $(document).ready(function() {
             $('.selectpicker').selectpicker();
             $('button.btn-success').click(function() { 
-                var tags = $(this).siblings('.bootstrap-select').find('.dropdown-menu li.selected span.text');
+                var tags = $(this).siblings('.bootstrap-select').find('.dropdown-menu li.selected span.text')
+                    .filter(function(idx, x) { 
+                        return x.innerText != 'Nothing selected';
+                    })
                 var urlarg = $.map(tags, function(x){return $(x).text()}).join(','); 
                 window.location.href = '/category/' + urlarg;
             });

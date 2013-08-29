@@ -250,7 +250,7 @@ if  os.getenv("USER") == "jay":  # or os.getenv("COMPUTERNAME")== "NEO-PC":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',  # Add 'mysql', 'sqlite3' or 'oracle'.
-            'NAME':  current_directory + '/tomo-db.db',  # Or path to database file if using sqlite3.
+            'NAME':  current_directory + '/hong-db.db',  # Or path to database file if using sqlite3.
             'USER': '',  # Not used with sqlite3.
             'PASSWORD': '',  # Not used with sqlite3.
             'HOST': '',  # Set to empty string for localhost. Not used with sqlite3.
