@@ -25,6 +25,7 @@ h2 {
     margin-left: 12px;
 }
 
+.btn-success-viewstartups { margin-top: -5px !important; }
 .navbar-search .search-query { background-color: rgb(230, 230, 230); width: 250px; }
 .second-navbar .nav > li > a:focus, .second-navbar .nav > li > a:hover { color: white; }
 .first-navbar { margin-bottom: 0px; }
@@ -90,10 +91,20 @@ width: 200px;
                   <a class="brand" href="/">StartUps.vn</a>
                   <div class="nav-collapse collapse navbar-responsive-collapse">
 
-                    <form class="navbar-search pull-left" action="/" method="GET">
+                    <form class="navbar-search pull-left" action="/" method="GET" style=" padding-right: 20px; ">
                       <input type="text" name="q" class="search-query span2" placeholder="for startups">
 
                     </form>
+                    <select class="selectpicker" multiple data-selected-text-format="count>3">
+
+                        {% for cat in categories %}
+                      <option value="{{ cat.slug }}" >{{ cat.slug }}</option>
+                        {% endfor %}
+                    </select>
+                    <button class="btn btn-success btn-success-viewstartups">View</button>
+
+
+                    
                     <ul class="nav pull-right">
 
                         {% if user.is_authenticated %}
