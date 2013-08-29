@@ -64,7 +64,7 @@ class Company(models.Model):
     founders = models.ManyToManyField(Person, through="Founder")
     #members = models.ManyToManyField(Person, through="TeamMember")
 
-    is_private = models.BooleanField(default= False, null= True, blank= True )
+    is_private = models.BooleanField(default= False )
     news =  models.TextField(default='', blank=True, null= True)
 
     def get_web(self):
