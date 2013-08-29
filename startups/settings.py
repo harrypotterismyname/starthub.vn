@@ -162,12 +162,20 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'ignite',
+  #  'tinymce',
+  #  'django-tinymce',
+    'django_wysiwyg',
       'storages',
      'inplaceeditform',
      'gravatar',
     'registration',
       'modeltranslation',
+
 )
+
+DJANGO_WYSIWYG_FLAVOR = "tinymce"    # or "tinymce_advanced"
+DJANGO_WYSIWYG_MEDIA_URL = 'http://humblefiles.startups.vn/media/'
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -282,3 +290,7 @@ if os.getenv("USER") != "jay" and os.getenv("USER") != "hongleviet":
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
     EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
+
+
+
+#TINYMCE_JS_URL = os.path.join(MEDIA_ROOT, "path/to/tiny_mce/tiny_mce.js")

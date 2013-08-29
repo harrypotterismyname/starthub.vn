@@ -52,12 +52,12 @@ def home(request):
      #TODO: implement search function
     if search_query:
 
-        companies = Company.objects.filter( name__contains = search_query ).order_by("-id")#[(page-1)*page_size:page*page_size ]
+        companies = Company.objects.filter( name__contains = search_query ).exclude(is_private = True).order_by("-id")#[(page-1)*page_size:page*page_size ]
 
     else:
 
 
-        companies = Company.objects.all().order_by("-id")#[(page-1)*page_size:page*page_size ]
+        companies = Company.objects.all().exclude(is_private = True).order_by("-id")#[(page-1)*page_size:page*page_size ]
         #max_items +=  Company.objects.all().count()
 
     # max_page = max_items/page_size
@@ -106,7 +106,7 @@ def category(request, categories):
     for cat in cats:
         category = Category.objects.get(slug = cat)
 
-        new_list = Company.objects.filter( category_id = category.id ).order_by("-id")#[(page-1)*page_size:page*page_size ]
+        new_list = Company.objects.filter( category_id = category.id ).exclude(is_private = True).order_by("-id")#[(page-1)*page_size:page*page_size ]
         #max_items +=  Company.objects.filter( category_id = category.id ).count()
 
         companies += new_list
@@ -138,6 +138,8 @@ def category(request, categories):
 
 def company(request, id):
     company = get_object_or_404(Company, pk=id)
+    if company.is_private:
+        return HttpResponseRedirect('/')
 
     team = company.teammember_set.all()
     founders = company.founders.all()
