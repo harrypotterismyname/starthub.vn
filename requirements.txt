@@ -13,3 +13,5 @@ django-inplaceedit
 django-gravatar
 django-registration
 django-modeltranslation
+django-wysiwyg
+django-tinymce
