@@ -1,5 +1,5 @@
 # Create your views here.
-
+from django.db.models import Q
 from django.core.paginator import Paginator
 from django.shortcuts import  render_to_response
 from django.template import RequestContext
@@ -53,10 +53,12 @@ def home(request):
 
     search_query = request.GET.get('q', None)
 
+
      #TODO: implement search function
     if search_query:
-
-        companies = Company.objects.filter( name__contains = search_query ).exclude(is_private = True).order_by("-id")#[(page-1)*page_size:page*page_size ]
+        search_query =  search_query.lower()
+        # | Q(name_en__contains = search_query)  | Q(name_vi__contains = search_query)
+        companies = Company.objects.filter(name__icontains = search_query).exclude(is_private = True).order_by("-id")#[(page-1)*page_size:page*page_size ]
 
     else:
 
