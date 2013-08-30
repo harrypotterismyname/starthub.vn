@@ -80,6 +80,36 @@
         </div>
          {% endif %}
 
+          <div class="extraneous-non-semantic-markup">
+
+              {% if not say_thanks %}
+          <h2>Your Contributions</h2>
+
+              <form method="POST">
+                  {% csrf_token %}
+                  <p>Your Suggestions </p>
+                  <p><textarea style="width: 580px; height: 180px;" name="suggestion"></textarea></p>
+                  <p>Your email for us to say Thank You! </p>
+                  <p><label> </label>
+                      <input style="width: 580px;" name="email"/>
+                  </p>
+
+                  <input type="submit" class="btn btn-success"/>
+
+              </form>
+
+                  {% else %}
+
+                  <h2>Thank you for your contributions!</h2>
+
+
+
+
+              {% endif %}
+                        <p></p>
+
+        </div>
+
             {% if  company.funding %}
                 <div class="extraneous-non-semantic-markup">
                   <h2>Funding</h2>

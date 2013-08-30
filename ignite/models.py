@@ -112,4 +112,14 @@ class Meta_info(models.Model):
     def __unicode__(self):
         return  self.slug
 
+class Suggestion(models.Model):
+    company = models.ForeignKey(Company)
+    time = models.DateTimeField(auto_now_add= True)
+    content = models.TextField(default="" )
+    email = models.CharField(max_length= 256, default= "", null= "", blank="")
+    is_checked = models.BooleanField(default= False)
+
+    def __unicode__(self):
+        return  self.email + " - " + self.company.name
+
 

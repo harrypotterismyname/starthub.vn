@@ -141,6 +141,8 @@ def category(request, categories):
 
 
 def company(request, id):
+
+
     company = get_object_or_404(Company, pk=id)
     if company.is_private:
         return HttpResponseRedirect('/')
@@ -150,13 +152,26 @@ def company(request, id):
 
 
     member_list = list(chain(founders,team))
+    say_thanks = False
+
+    if request.method == "POST":
+
+        suggestion = Suggestion( content = request.POST.get('content', ''), email = request.POST.get('email','') )
+        suggestion.company = company
+        suggestion.save()
+
+        say_thanks = True
+
+
 
 
 
 
     variables = RequestContext(request, {
            'company': company,
-           'team': member_list
+           'team': member_list,
+           'say_thanks': say_thanks,
+
 
             })
 
