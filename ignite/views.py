@@ -31,6 +31,10 @@ def seperate_list(companies):
 
     return listA, listB
 
+
+def go_home(request):
+    return  HttpResponseRedirect("/")
+
 def home(request):
 
     try:

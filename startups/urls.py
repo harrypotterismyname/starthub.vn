@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     # Examples:
      url(r'^$', home, name='home'),
      url(r'^company/(?P<id>\d+)-(.+)/', company),
+     url(r'^category/$', go_home),
      url(r'^category/(?P<categories>.+)/$', category),
      url(r'^category/(?P<categories>.+)$', category),
      url(r'^about-us/$', about_us ),
