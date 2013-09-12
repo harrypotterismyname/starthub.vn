@@ -212,9 +212,13 @@ def about_us(request):
 def add_your_company(request):
 
     if request.method == 'POST': # If the form has been submitted...
-        form = AddCompanyForm(request.POST) # A form bound to the POST data
+        form = AddCompanyForm(request.POST, request.FILES) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             ins = form.save()
+
+            logo =  request.FILES.get('logo',None)
+            if (logo):
+                ins.logo = logo
             ins.is_private = True
             ins.save()
             # Process the data in form.cleaned_data
