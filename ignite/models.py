@@ -58,6 +58,7 @@ class Company(models.Model):
     address = models.CharField(max_length=256,default="")
     website = models.CharField(max_length=256,default="")
     logo = models.FileField(blank= True, null= True,upload_to=get_filestore_path)
+    screenshot = models.FileField(blank= True, null= True,upload_to=get_filestore_path)
 
     funding = models.TextField(default='', blank=True, null= True)
 
