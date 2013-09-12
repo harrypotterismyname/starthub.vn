@@ -95,7 +95,6 @@ def home(request):
     return render_to_response('index.html', variables )
 
 
-
 def category(request, categories):
 
 
@@ -111,11 +110,14 @@ def category(request, categories):
     companies = []
     for cat in cats:
         category = Category.objects.get(slug = cat)
+        new_list = list(category.cat_list.all())
+        new_list += list(Company.objects.filter( category_id = category.id ).exclude(is_private = True).order_by("-id"))#[(page-1)*page_size:page*page_size ]
 
-        new_list = Company.objects.filter( category_id = category.id ).exclude(is_private = True).order_by("-id")#[(page-1)*page_size:page*page_size ]
         #max_items +=  Company.objects.filter( category_id = category.id ).count()
 
         companies += new_list
+
+    companies = list(set(companies))
 
     p = Paginator(companies, page_size)
 
