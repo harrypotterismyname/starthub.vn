@@ -45,7 +45,7 @@ def home(request):
         head_description = None
 
     page = request.GET.get("page",1)
-    page_size = 10
+    page_size = 30
     max_items = 0
 
     categories = Category.objects.all()
@@ -101,7 +101,7 @@ def category(request, categories):
 
 
     page = request.GET.get("page",1)
-    page_size = 10
+    page_size = 30
     #max_items = 0
 
     categories = categories.lower()
