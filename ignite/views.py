@@ -11,6 +11,8 @@ from ignite.forms import AddCompanyForm
 
 from ignite.models import *
 from itertools import chain
+import operator
+
 def seperate_list(companies):
 
     counter = len(companies)
@@ -48,7 +50,8 @@ def home(request):
     page_size = 30
     max_items = 0
 
-    categories = Category.objects.all()
+    # categories = Category.objects.all()
+    categories = Category.objects.order_by('name').all()
 
 
     search_query = request.GET.get('q', None)
