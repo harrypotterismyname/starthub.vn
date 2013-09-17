@@ -108,6 +108,7 @@ def category(request, categories):
 
     categories = categories.lower()
 
+    cbcategories = Category.objects.order_by('name').all()
 
     cats = categories.split(',')
     companies = []
@@ -116,7 +117,7 @@ def category(request, categories):
         new_list = list(category.cat_list.all())
         new_list += list(Company.objects.filter( category_id = category.id ).exclude(is_private = True).order_by("-id"))#[(page-1)*page_size:page*page_size ]
 
-        #max_items +=  Company.objects.filter( category_id = category.id ).count()
+        #max_items +22=  Company.objects.filter( category_id = category.id ).count()
 
         companies += new_list
 
@@ -127,9 +128,6 @@ def category(request, categories):
     current_page = p.page(page)
     company_list = current_page.object_list
 
-
-
-
     listA, listB = seperate_list(company_list)
 
     variables = RequestContext(request, {
@@ -139,8 +137,8 @@ def category(request, categories):
              'page':page,
             'paging': p,
             'current_page': current_page,
-            'category': category
-
+            'category': category,
+            'categories': cbcategories
             })
 
 
@@ -160,6 +158,7 @@ def company(request, id):
 
     member_list = list(chain(founders,team))
     say_thanks = False
+    categories = Category.objects.order_by('name').all()
 
     if request.method == "POST":
 
@@ -178,7 +177,7 @@ def company(request, id):
            'company': company,
            'team': member_list,
            'say_thanks': say_thanks,
-
+            'categories': categories
 
             })
 
