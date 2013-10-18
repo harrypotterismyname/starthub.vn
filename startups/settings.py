@@ -12,7 +12,7 @@ ADMINS = (
 
 #AUTH_PROFILE_MODULE = "user_profile.Profile"
 
-SESSION_COOKIE_DOMAIN = ".startups.vn"
+SESSION_COOKIE_DOMAIN = ".starthub.vn"
 
 MANAGERS = ADMINS
 
@@ -227,7 +227,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-SESSION_COOKIE_DOMAIN=".startups.vn"
+SESSION_COOKIE_DOMAIN=".starthub.vn"
 
 
 if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay" or os.getenv("COMPUTERNAME") =="TAINP60436" :  # or os.getenv("COMPUTERNAME")== "NEO-PC":
