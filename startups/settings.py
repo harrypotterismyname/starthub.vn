@@ -229,7 +229,7 @@ STATICFILES_DIRS = (
 SESSION_COOKIE_DOMAIN=".startups.vn"
 
 
-if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay":  # or os.getenv("COMPUTERNAME")== "NEO-PC":
+if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay" or os.getenv("COMPUTERNAME") =="TaiNP60436":  # or os.getenv("COMPUTERNAME")== "NEO-PC":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',  # Add 'mysql', 'sqlite3' or 'oracle'.
