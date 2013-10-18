@@ -4,3 +4,4 @@ staticfiles
 .idea
 .idea/*
 .swp
+.DS_Store
