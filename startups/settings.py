@@ -206,10 +206,11 @@ LOGGING = {
     }
 }
 
-
-# Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+if os.getenv("COMPUTERNAME") !="TAINP60436":
+# Parse database configuration from $DATABASE_URL
+
+    DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -229,7 +230,8 @@ STATICFILES_DIRS = (
 SESSION_COOKIE_DOMAIN=".startups.vn"
 
 
-if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay" or os.getenv("COMPUTERNAME") =="TaiNP60436":  # or os.getenv("COMPUTERNAME")== "NEO-PC":
+if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay" or os.getenv("COMPUTERNAME") =="TAINP60436" :  # or os.getenv("COMPUTERNAME")== "NEO-PC":
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',  # Add 'mysql', 'sqlite3' or 'oracle'.
@@ -239,7 +241,7 @@ if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay" or os.getenv
             'HOST': '',  # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '',  # Set to empty string for default. Not used with sqlite3.
         },
-            'heroku': dj_database_url.config(default='postgres://xxx:vmjHkviTmyNsfvZxo4hZktEUhcZ@ec2-23-23-237-0.compute-1.amazonaws.com:5432/d1u1lssnv8kfslhj')
+
 
     }
     SESSION_COOKIE_DOMAIN = None
@@ -284,7 +286,7 @@ ACCOUNT_ACTIVATION_DAYS = 8 # One-week activation window; you may, of course, us
 
 import os
 
-if os.getenv("USER") != "jay" and os.getenv("USER") != "hongleviet":
+if os.getenv("USER") != "jay" and os.getenv("USER") != "hongleviet" and os.getenv('COMPUTERNAME') != "TAINP60436":
     EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
     EMAIL_HOST= 'smtp.sendgrid.net'
     EMAIL_PORT = 587

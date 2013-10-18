@@ -58,6 +58,8 @@ class Company(models.Model):
     address = models.CharField(max_length=256,default="")
     website = models.CharField(max_length=256,default="")
     logo = models.FileField(blank= True, null= True,upload_to=get_filestore_path)
+    screenshot = models.FileField(blank= True, null= True,upload_to=get_filestore_path)
+    cat_list = models.ManyToManyField(Category, related_name='cat_list')
 
     funding = models.TextField(default='', blank=True, null= True)
 

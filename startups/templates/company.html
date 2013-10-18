@@ -66,6 +66,10 @@
                         <p></p>
 
         </div>
+        <div class="extraneous-non-semantic-markup">
+          <h2>Screenshot</h2>
+          <img src="http://humblefiles.startups.vn.s3.amazonaws.com/img/screenshots/{{ company.id }}.png">
+        </div>
 
         {% if company.news %}
         <div class="extraneous-non-semantic-markup">
@@ -136,6 +140,7 @@
           </ul>
           <!--p><a class="btn" href="#">View details »</a></p-->
         </div>
+        <!--
         <div class="extraneous-non-semantic-markup">
           <h2>Founders & Team</h2>
 
@@ -147,16 +152,20 @@
 
 
               </a>
+
               <div class="media-body">
                 <h4 class="media-heading">{{ founder.name }}</h4>
                 {{ founder.bio }}
               </div>
+
             </div>
 
             {% endfor %}
 
           <!--p><a placeholderass="btn" href="#">View details »</a></p-->
+
         </div>
+
         </div>
       </div>
 

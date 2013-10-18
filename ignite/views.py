@@ -5,12 +5,14 @@ from django.shortcuts import  render_to_response
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.shortcuts import get_object_or_404
 from ignite.forms import AddCompanyForm
 
 from ignite.models import *
 from itertools import chain
+import operator
+
 def seperate_list(companies):
 
     counter = len(companies)
@@ -37,6 +39,9 @@ def go_home(request):
 
 def home(request):
 
+    if request.get_host().find('startups.vn') >= 0:
+        return  HttpResponsePermanentRedirect('http://www.starthub.vn')
+
     try:
         aboutus_homepage = Meta_info.objects.get( slug = "aboutus_homepage")
         head_description =  Meta_info.objects.get( slug = "head_description")
@@ -45,10 +50,11 @@ def home(request):
         head_description = None
 
     page = request.GET.get("page",1)
-    page_size = 10
+    page_size = 30
     max_items = 0
 
-    categories = Category.objects.all()
+    # categories = Category.objects.all()
+    categories = Category.objects.order_by('name').all()
 
 
     search_query = request.GET.get('q', None)
@@ -95,35 +101,35 @@ def home(request):
     return render_to_response('index.html', variables )
 
 
-
 def category(request, categories):
 
 
 
     page = request.GET.get("page",1)
-    page_size = 10
+    page_size = 30
     #max_items = 0
 
     categories = categories.lower()
 
+    cbcategories = Category.objects.order_by('name').all()
 
     cats = categories.split(',')
     companies = []
     for cat in cats:
         category = Category.objects.get(slug = cat)
+        new_list = list(category.cat_list.all())
+        new_list += list(Company.objects.filter( category_id = category.id ).exclude(is_private = True).order_by("-id"))#[(page-1)*page_size:page*page_size ]
 
-        new_list = Company.objects.filter( category_id = category.id ).exclude(is_private = True).order_by("-id")#[(page-1)*page_size:page*page_size ]
-        #max_items +=  Company.objects.filter( category_id = category.id ).count()
+        #max_items +22=  Company.objects.filter( category_id = category.id ).count()
 
         companies += new_list
+
+    companies = list(set(companies))
 
     p = Paginator(companies, page_size)
 
     current_page = p.page(page)
     company_list = current_page.object_list
-
-
-
 
     listA, listB = seperate_list(company_list)
 
@@ -134,8 +140,8 @@ def category(request, categories):
              'page':page,
             'paging': p,
             'current_page': current_page,
-            'category': category
-
+            'category': category,
+            'categories': cbcategories
             })
 
 
@@ -155,6 +161,7 @@ def company(request, id):
 
     member_list = list(chain(founders,team))
     say_thanks = False
+    categories = Category.objects.order_by('name').all()
 
     if request.method == "POST":
 
@@ -173,7 +180,7 @@ def company(request, id):
            'company': company,
            'team': member_list,
            'say_thanks': say_thanks,
-
+            'categories': categories
 
             })
 
@@ -212,9 +219,13 @@ def about_us(request):
 def add_your_company(request):
 
     if request.method == 'POST': # If the form has been submitted...
-        form = AddCompanyForm(request.POST) # A form bound to the POST data
+        form = AddCompanyForm(request.POST, request.FILES) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             ins = form.save()
+
+            logo =  request.FILES.get('logo',None)
+            if (logo):
+                ins.logo = logo
             ins.is_private = True
             ins.save()
             # Process the data in form.cleaned_data
