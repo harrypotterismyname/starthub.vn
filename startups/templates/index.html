@@ -92,14 +92,15 @@
                                     </div>
                                     <div class="row">
                                         <div class="span2">
-
+                                        <div class="imageClip">
                                             <a href="#">
                                                 {% if company.get_logo %}
-                                                    <img class="img-rounded imageClip" src="{{ company.get_logo }}"/>
+                                                    <img class="img-rounded" src="{{ company.get_logo }}"/>
                                                 {% else %}
                                                     <div class="img-empty"></div>
                                                 {% endif %}
                                             </a>
+                                        </div>
                                         </div>
                                         <div class="span3">
                                             <p>
@@ -128,10 +129,12 @@
 
                                             <a href="#">
                                                 {% if company.get_logo %}
-                                                    <img class="img-rounded imageClip" src="{{ company.get_logo }}"/>
+                                                    <div class="imageClip">
+                                                    <img class="img-rounded" src="{{ company.get_logo }}"/>
                                                 {% else %}
                                                     <div class="img-empty"></div>
                                                 {% endif %}
+                                                    </div>
                                             </a>
 
                                         </div>
