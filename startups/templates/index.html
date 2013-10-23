@@ -9,7 +9,7 @@
         }
 
         .hp-company-column.left {
-                            border-right: 3px solid #dfebf7;
+            border-right: 3px solid #dfebf7;
         }
 
         .hp-company {
@@ -35,6 +35,12 @@
             width: 170px;
             height: 125px;
             border: 4px dotted #aaa;
+        }
+
+        .imageClip {
+            width: 300px;
+            height: 175px;
+            overflow: hidden;
         }
 
     </style>
@@ -89,7 +95,7 @@
 
                                             <a href="#">
                                                 {% if company.get_logo %}
-                                                    <img src="{{ company.get_logo }}"/>
+                                                    <img class="img-rounded imageClip" src="{{ company.get_logo }}"/>
                                                 {% else %}
                                                     <div class="img-empty"></div>
                                                 {% endif %}
@@ -122,7 +128,7 @@
 
                                             <a href="#">
                                                 {% if company.get_logo %}
-                                                    <img src="{{ company.get_logo }}"/>
+                                                    <img class="img-rounded imageClip" src="{{ company.get_logo }}"/>
                                                 {% else %}
                                                     <div class="img-empty"></div>
                                                 {% endif %}
@@ -137,8 +143,10 @@
                                     </div>
                                 </div>
                             {% endfor %}
-                        </div><!-- end markup -->
-                    </div> <!-- end collum -->
+                        </div>
+                        <!-- end markup -->
+                    </div>
+                    <!-- end collum -->
                 </div>
             </div>
             </div>
