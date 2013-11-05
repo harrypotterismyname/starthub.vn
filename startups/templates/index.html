@@ -36,12 +36,21 @@
             height: 125px;
             border: 4px dotted #aaa;
         }
+        .box{
+            background-color: #ffffff;
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
 
         .imageClip {
 {#            min-width: 170px;#}
             min-height: 170px;
             overflow: hidden;
         }
+    .hp-company-column.left{
+        border: none;
+    }
 
     </style>
 
@@ -52,8 +61,8 @@
             {% if categories %}
                 <div class="row">
 
-                <div class="span12">
-                <div class="extraneous-non-semantic-markup" style="margin: 0 80px 20px 80px;">
+{#                <div class="span12">#}
+                <div class="span12 box pagination-centered">
 
                     <p>
                         {{ head_description.content|safe }}
@@ -75,7 +84,7 @@
 
                 </div>
             {% endif %}
-            </div>
+{#            </div>#}
 
 
             <div class="span12">
