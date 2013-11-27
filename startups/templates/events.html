@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% load gravatar %}
+
+   {% block title %}
+{{ company.name }}
+{% endblock %}
+{% block content %}
+    <style>#content-main-login { padding: 50px; background: white; }</style>
+    <div id="content-main-login">
+   <h3> Vietnam Start-up Events</h3>
+<iframe src='https://www.google.com/calendar/embed?src=startupdigest.com_ug9lql2u5t4ob3k6uehfqp1dng@group.calendar.google.com&ctz=Asia/Bangkok'style=border=0 frameborder=0 height=800 width=1060 scrolling='no'></iframe>
+
+
+    </div>
+
+
+
+{% endblock %}

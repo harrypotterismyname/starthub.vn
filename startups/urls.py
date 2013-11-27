@@ -17,6 +17,7 @@ urlpatterns = patterns('',
      url(r'^about-us/$', about_us ),
       url(r'^add-your-company/$', add_your_company),
       url(r'^thanks/$', thanks),
+     url(r'^events/$', events),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

@@ -198,6 +198,17 @@ def thanks(request):
 
     return render_to_response('thanks.html', variables )
 
+
+def events(request):
+
+    variables = RequestContext(request, {
+
+
+            })
+
+
+    return render_to_response('events.html', variables )
+
 def about_us(request):
 
     #company = get_object_or_404(Company, pk=id)
