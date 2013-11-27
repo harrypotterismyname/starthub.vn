@@ -1,22 +1,68 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <style>
+        .hp-company-column.span6 {
+            background-color: white;
+            margin: 0;
+            padding: 0 6px 0 6px;
+        }
 
+        .hp-company-column.left {
+            border-right: 3px solid #dfebf7;
+        }
+
+        .hp-company {
+            margin: 10px 0 30px 0;
+            height: 150px;
+        }
+
+        .hp-company h2 {
+            font-size: 25px;
+        }
+
+        .hp-company-details {
+            padding-right: 20px;
+        }
+
+        .hp-company-image {
+            margin-left: 0;
+            margin-right: 12px;
+        }
+
+        .hp-company .img-empty {
+            background-color: #eee;
+            width: 170px;
+            height: 125px;
+            border: 4px dotted #aaa;
+        }
+        .box{
+            background-color: #ffffff;
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .imageClip {
+{#            min-width: 170px;#}
+            min-height: 170px;
+            overflow: hidden;
+        }
+    .hp-company-column.left{
+        border: none;
+    }
+
+    </style>
 
     <div class="container">
-        <div class="row" style="
-    margin: 0;
-    padding-top: 20px;
-">
+        <div class="row" style="margin: 0;padding-top: 20px;">
 
             <!-- Example row of columns -->
             {% if categories %}
                 <div class="row">
 
-                <div class="span12">
-                <div class="extraneous-non-semantic-markup" style="
-    margin: 0 80px 20px 80px;
-">
+{#                <div class="span12">#}
+                <div class="span12 box pagination-centered">
 
                     <p>
                         {{ head_description.content|safe }}
@@ -34,124 +80,89 @@
                   <option value="{{ cat.slug }}" >{{ cat.slug }}</option>
                     {% endfor %}
                 </select>
-
-
-
-           
-           <button class="btn btn-success btn-success-viewstartups">View</button-->
+                    <button class="btn btn-success btn-success-viewstartups">View</button-->
 
                 </div>
             {% endif %}
-
-            <style>
-                .hp-company-column.span6 {
-                    background-color: white;
-                    margin: 0;
-                    padding: 0 6px 0 6px;
-                }
-
-                .hp-company-column.left {
-                    border-right: 3px solid #dfebf7;
-                }
-
-                .hp-company {
-                    margin: 10px 0 30px 0;
-                    height: 150px;
-                }
-
-                .hp-company h2 {
-                    font-size: 25px;
-                }
-
-                .hp-company-details {
-                    padding-right: 20px;
-                }
-
-                .hp-company-image {
-                    margin-left: 0;
-                    margin-right: 12px;
-                }
-
-                .hp-company .img-empty {
-                    background-color: #eee;
-                    width: 170px;
-                    height: 125px;
-                    border: 4px dotted #aaa;
-                }
-
-            </style>
-            <div class="extraneous-non-semantic-markup" style="
-    background-color: white; width: 1170px;
-">
+{#            </div>#}
 
 
-                <div class="hp-company-column left span6">
-                    <div class="extraneous-non-semantic-markup">
-                        {% for company in listA %}
+            <div class="span12">
+                <div class="extraneous-non-semantic-markup row" style="background-color: white;">
+                    <!--        <div class="hp-company-column left span6"> -->
+                    <div class="hp-company-column left span6">
+                        <div class="extraneous-non-semantic-markup">
+                            {% for company in listA %}
+                                <div class="span5">
+                                    <div class="row">
+                                        <div class="span5">
+                                            <a href="{{ company.get_url }}"><h2>{{ company.name }}</h2></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="span2">
+                                        <div class="imageClip">
+                                            <a href="#">
+                                                {% if company.get_logo %}
+                                                    <img class="img-rounded" src="{{ company.get_logo }}"/>
+                                                {% else %}
+                                                    <div class="img-empty"></div>
+                                                {% endif %}
+                                            </a>
+                                        </div>
+                                        </div>
+                                        <div class="span3">
+                                            <p>
+                                                {{ company.one_sentence_description }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!--End div row -->
+                                </div> <!--end div span 6 company -->
+                            {% endfor %}
+                        </div>
+                        <!-- end div markup -->
+                    </div>
+                    <!-- end collum left -->
+                    <div class="hp-company-column span5">
+                        <div class="extraneous-non-semantic-markup">
+                            {% for company in listB %}
+                                <div class="span5">
+                                    <div class="row">
+                                        <div class="span5">
+                                            <a href="{{ company.get_url }}"><h2>{{ company.name }}</h2></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="span2">
 
+                                            <a href="#">
+                                                {% if company.get_logo %}
+                                                    <div class="imageClip">
+                                                    <img class="img-rounded" src="{{ company.get_logo }}"/>
+                                                {% else %}
+                                                    <div class="img-empty"></div>
+                                                {% endif %}
+                                                    </div>
+                                            </a>
 
-
-                            <div class="hp-company span6">
-                                <div class="span2 hp-company-image item-block">
-                                    <div class="image-wrapper">
-                                        {% if company.get_logo %}
-                                            <div class="image">
-                                                <img src="{{ company.get_logo }}"/>
-                                            </div>
-                                        {% else %}
-                                            <div class="img-empty"></div>
-                                        {% endif %}
+                                        </div>
+                                        <div class="span3">
+                                            <p>
+                                                {{ company.one_sentence_description }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="span4">
-                                    <a href="{{ company.get_url }}"><h2>  {{ company.name }}</h2></a>
-
-                                    <div class="span4 hp-company-details">{{ company.one_sentence_description }}</div>
-                                </div>
-                            </div>
-
-
-
-                        {% endfor %}
-
-
+                            {% endfor %}
+                        </div>
+                        <!-- end markup -->
                     </div>
+                    <!-- end collum -->
                 </div>
-
-
-                <div class="hp-company-column span6">
-                    <div class="extraneous-non-semantic-markup">
-                        {% for company in listB %}
-
-
-
-                            <div class="hp-company span6">
-                                <div class="span2 hp-company-image item-block">
-                                    <div class="image-wrapper">
-                                        {% if company.get_logo %}
-                                            <div class="image">
-                                                <img src="{{ company.get_logo }}"/>
-                                            </div>
-                                        {% else %}
-                                            <div class="img-empty"></div> {% endif %}
-                                    </div>
-                                </div>
-                                <div class="span4">
-                                    <a href="{{ company.get_url }}"><h2>  {{ company.name }}</h2></a>
-
-                                    <div class="span4 hp-company-details">{{ company.one_sentence_description }}</div>
-                                </div>
-                            </div>
-
-
-
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="clear" style=" clear: both; "></div>
             </div>
+            </div>
+            <div class="clear" style=" clear: both; "></div>
 
             {% if category %}
 
@@ -161,11 +172,6 @@
                 {% include "module/paging.html" %}
 
             {% endif %}
-
-            </div>
-
-            </div>
-
 
         </div>
     </div>
