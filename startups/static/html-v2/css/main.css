@@ -1,0 +1,118 @@
+h1, h2, h3 {
+    text-transform: uppercase;
+}
+.navbar .navbar-inner {
+    background-image: none;
+    background-color: #FFF;
+    position: relative;
+}
+.navbar .navbar-inner .lock {
+    position: absolute;
+    right: 0
+}
+.navbar .brand {
+    color: #944131;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 12px;
+}
+.nav-collapse .nav li a {
+    padding: 8px 10px;
+    margin: 15px 0px 15px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #393C39;
+}
+.nav-collapse .nav li:hover a {
+    background-color: #e5e5e5;
+}
+.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
+    color: #555;
+    box-shadow: none;
+    text-decoration: none;
+    background-color: #e5e5e5;
+}
+.navbar-search {
+    margin-top: 18px;
+    width: 60%;
+}
+.navbar-search .search-query {
+    border-radius: 0;
+    padding-left: 35px;
+    width: 90%;
+}
+.navbar-search i {
+    position: relative;
+    left: 30px;
+}
+.left-content {
+    margin-bottom: 50px
+}
+.left-content p, .right-content p {
+    color: #4A4D4A
+}
+.left-content .main-title {
+    color: #944539;
+    font-weight: bold;
+    font-size: 70px;
+}
+.left-content .slogan {
+    color: #7B7D7B;
+    font-size: 22px;
+    border-bottom: 2px solid #E7E7E7;
+    margin-bottom: 20px;
+}
+.left-content p {
+    font-size: 16px;
+    text-align: justify;
+    line-height: 35px;
+}
+.right-content>h3 {
+    font-size: 20px;
+    color: #9C4539;
+}
+.right-content .unstyled {
+    margin-left: 20px
+}
+.right-content .media img {
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+}
+.right-content .media>.pull-left {
+    margin-right: 30px;
+}
+.right-content .media .media-body {
+    margin-top: 25px;
+    color: #4A4D4A
+}
+.right-content .media .media-body span {
+    color: #294DCE;
+    font-weight: bold;
+}
+.right-content .unstyled li {
+    margin-bottom: 20px;
+}
+.carousel .carousel-inner .item img {
+    width: 190px;
+    height: 190px;
+}
+.carousel .thumbnails>li {
+    /*width: 14.5%;*/
+    margin-right: 21px;
+    margin-left: 0;
+}
+.carousel .thumbnails>li:last-child {
+    margin-right: 0px;
+}
+.language {
+    font-weight: bold;
+    color: #C6C7C6;
+    margin-top: 50px
+}
+.language .unstyled, .language .unstyled li {
+    display: inline-block;
+}
+.language .unstyled li.active i, .language .unstyled li:hover i {
+    background-position-y: -3px;
+}

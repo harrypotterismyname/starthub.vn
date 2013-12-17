@@ -1,0 +1,35 @@
+.icon-logo {
+    background-image: url("../img/logo.png");
+    height: 30px;
+    width: 30px;
+    position: relative;
+    background-position: 0px;
+    top: -5px;
+    margin-right: 10px;
+}
+.icon-logo1 {
+    background-image: url("../img/logo1.png");
+    height: 30px;
+    width: 30px;
+    position: relative;
+    background-position: 0px;
+    top: -5px;
+    margin-right: 10px;
+}
+.icon-en {
+    background-image: url("../img/icon-flag.png");
+    height: 25px;
+    width: 30px;
+    position: relative;
+    background-position: -31px -33px;
+    top: -5px;
+    margin-left: 10px;
+}
+.icon-vi {
+    background-image: url("../img/icon-flag.png");
+    height: 25px;
+    width: 30px;
+    position: relative;
+    background-position: -1px -33px;
+    top: -5px;
+}
