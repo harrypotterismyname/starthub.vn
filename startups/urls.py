@@ -1,9 +1,15 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import RedirectView
 from ignite.api import *
+from tastypie.api import Api
 
-company_resource = CompanyResource()
-user_resource = UserResource()
+
+#company_resource = CompanyResource()
+#user_resource = UserResource()
+
+v1_api = Api(api_name='v1')
+v1_api.register(UserResource())
+v1_api.register(CompanyResource())
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -37,8 +43,8 @@ urlpatterns = patterns('',
           (r'^i18n/', include('django.conf.urls.i18n')),
          (r'^tinymce/', include('tinymce.urls')),
 
-     (r'^api/', include(company_resource.urls)),
-          (r'^api/', include(user_resource.urls)),
+    
+          (r'^api/', include(v1_api.urls)),
 
 
 )
