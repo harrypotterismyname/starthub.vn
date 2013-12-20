@@ -43,7 +43,7 @@ urlpatterns = patterns('',
           (r'^i18n/', include('django.conf.urls.i18n')),
          (r'^tinymce/', include('tinymce.urls')),
 
-    
+
           (r'^api/', include(v1_api.urls)),
 
 
