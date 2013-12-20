@@ -230,7 +230,7 @@ STATICFILES_DIRS = (
 SESSION_COOKIE_DOMAIN=".starthub.vn"
 
 
-if  os.getenv('USER') == 'hongleviet' or os.getenv("USER") == "jay" or os.getenv("COMPUTERNAME") =="TAINP60436" :  # or os.getenv("COMPUTERNAME")== "NEO-PC":
+if  os.getenv('USER') == 'hongleviet' or  os.getenv('USER') == 'ubuntu' or os.getenv("USER") == "jay" or os.getenv("COMPUTERNAME") =="TAINP60436" :  # or os.getenv("COMPUTERNAME")== "NEO-PC":
 
     DATABASES = {
         'default': {
@@ -263,10 +263,10 @@ if  os.getenv("USER") == "jay":  # or os.getenv("COMPUTERNAME")== "NEO-PC":
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-AWS_ACCESS_KEY_ID = "AKIAIPBHJ2T5DS7WLXPA"
+AWS_ACCESS_KEY_ID = "AKIAJUC3TSYQHZ4RNL2A"
 AWS_QUERYSTRING_AUTH = False
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "humblefiles.startups.vn"
+AWS_SECRET_ACCESS_KEY = "6Fo5mKWTV18k28uQKuUR1D4LfnmRTs0hhccWNk9n"
+AWS_STORAGE_BUCKET_NAME = "humblefiles.starthub.vn"
 AWS_S3_SECURE_URLS = False
 
 ADMIN_MEDIA_PREFIX = '/static/admin'
@@ -286,7 +286,7 @@ ACCOUNT_ACTIVATION_DAYS = 8 # One-week activation window; you may, of course, us
 
 import os
 
-if os.getenv("USER") != "jay" and os.getenv("USER") != "hongleviet" and os.getenv('COMPUTERNAME') != "TAINP60436":
+if os.getenv("USER") != "jay" and os.getenv("USER") != "ubuntu" and os.getenv("USER") != "hongleviet" and os.getenv('COMPUTERNAME') != "TAINP60436":
     EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
     EMAIL_HOST= 'smtp.sendgrid.net'
     EMAIL_PORT = 587
