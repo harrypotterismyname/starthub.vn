@@ -1,6 +1,9 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import RedirectView
+from ignite.api import *
 
+company_resource = CompanyResource()
+user_resource = UserResource()
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -33,5 +36,9 @@ urlpatterns = patterns('',
       (r'^accounts/', include('registration.backends.default.urls')),
           (r'^i18n/', include('django.conf.urls.i18n')),
          (r'^tinymce/', include('tinymce.urls')),
+
+     (r'^api/', include(company_resource.urls)),
+          (r'^api/', include(user_resource.urls)),
+
 
 )

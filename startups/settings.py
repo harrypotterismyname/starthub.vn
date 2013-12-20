@@ -170,6 +170,7 @@ INSTALLED_APPS = (
      'gravatar',
     'registration',
       'modeltranslation',
+    'tastypie',
 
 )
 

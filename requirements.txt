@@ -15,3 +15,6 @@ django-registration
 django-modeltranslation
 django-wysiwyg
 django-tinymce
+python-mimeparse
+dateutil
+django-tastypie
