@@ -16,5 +16,5 @@ django-modeltranslation
 django-wysiwyg
 django-tinymce
 python-mimeparse
-dateutil
+python-dateutil
 django-tastypie
