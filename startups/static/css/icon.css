@@ -1,0 +1,48 @@
+.icon-logo {
+    background-image: url("../img/logo.png");
+    height: 30px;
+    width: 30px!important;
+    position: relative;
+    background-position: 0px;
+    top: 7px;
+    margin: 0px 10px 0px 0px;
+    display: inline-block;
+}
+.icon-logo1 {
+    background-image: url("../img/logo1.png");
+    height: 30px;
+    width: 30px;
+    position: relative;
+    background-position: 0px;
+    top: -5px;
+    margin-right: 10px;
+}
+.icon-en {
+    background-image: url("../img/icon-flag.png");
+    height: 20px;
+    width: 30px!important;
+    position: relative;
+    background-position: -31px -33px;
+    top: -5px;
+    margin-left: 10px;
+}
+.icon-vi {
+    background-image: url("../img/icon-flag.png");
+    height: 20px;
+    width: 30px!important;
+    position: relative;
+    background-position: -1px -33px;
+    top: -5px;
+}
+.icon-user-3 {
+    background: url("../img/user-3.png") no-repeat;
+    height: 32px;
+    width: 32px!important;
+    position: relative;
+    top: 5px;
+}
+.fa-search {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}

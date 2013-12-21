@@ -86,8 +86,8 @@ def home(request):
 
     variables = RequestContext(request, {
             'companies': companies,
-            'listA': listA,
-            'listB': listB,
+            'company_list': company_list,
+            #'listB': listB,
             'page':page,
             'paging': p,
             'current_page': current_page,
@@ -98,7 +98,7 @@ def home(request):
             })
 
 
-    return render_to_response('index.html', variables )
+    return render_to_response('v2index.html', variables )
 
 
 def category(request, categories):

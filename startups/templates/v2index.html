@@ -1,0 +1,70 @@
+{% extends 'v2-base.html' %}
+
+{% block main %}
+
+
+    {% include "module/home/carousel.html" %}
+
+    <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left-content">
+                <h1 class="main-title">starthub.vn</h1>
+                <h2 class="slogan">
+                    {% if  head_description.title %}
+                     {{head_description.title}}
+                    {% else %}
+                   the heart of vietnam's startup ecosystem
+                        {% endif %}
+                </h2>
+                <p>
+
+                      {{ head_description.content|safe }}
+
+                        {% if user.is_staff %}
+                            <a href="/admin/ignite/meta_info/">[edit]</a>
+                        {% endif %}
+                </p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 right-content">
+                <h3>latest activity</h3>
+                <ul class="list-unstyled">
+                    <li>
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img src="images/patner.jpg" alt="">
+                            </a>
+                            <div class="media-body">
+                                <span class="name">Anh Minh Do</span>started a topic
+                                <span class="object">"Startups in Vietnam"</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img src="images/patner.jpg" alt="">
+                            </a>
+                            <div class="media-body">
+                                <span class="name">t0nyh0</span>has joined.
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img src="images/patner.jpg" alt="">
+                            </a>
+                            <div class="media-body">
+                                <span class="name">Anh Minh Do</span>posted an update to
+                                <span class="object">Starthub</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+{% endblock %}

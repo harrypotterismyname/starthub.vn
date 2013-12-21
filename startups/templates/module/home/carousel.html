@@ -1,0 +1,34 @@
+ <div class="row">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+{#                <ol class="carousel-indicators">#}
+{#                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>#}
+{#                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>#}
+{#                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>#}
+{#                </ol>#}
+                <div class="carousel-inner">
+                    <div class="item active">
+                        {% for company in company_list %}
+                        <a href="{{ company.get_url }}">
+                        <img src="{{ company.get_logo }}" alt="">
+                            </a>
+                        {% endfor %}
+                    </div>
+{#                    <div class="item">#}
+{#                        <img src="images/patner.jpg" alt="">#}
+{#                        <img src="images/img2.jpg" alt="">#}
+{#                        <img src="images/patner.jpg" alt="">#}
+{#                        <img src="images/patner.jpg" alt="">#}
+{#                        <img src="images/img2.jpg" alt="">#}
+{#                        <img src="images/patner.jpg" alt="">#}
+{#                    </div>#}
+{#                    <div class="item">#}
+{#                        <img src="images/patner.jpg" alt="">#}
+{#                        <img src="images/img3.jpg" alt="">#}
+{#                        <img src="images/patner.jpg" alt="">#}
+{#                        <img src="images/patner.jpg" alt="">#}
+{#                        <img src="images/img3.jpg" alt="">#}
+{#                        <img src="images/patner.jpg" alt="">#}
+{#                    </div>#}
+                </div>
+            </div>
+        </div>

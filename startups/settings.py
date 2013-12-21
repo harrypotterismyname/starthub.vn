@@ -171,6 +171,7 @@ INSTALLED_APPS = (
     'registration',
       'modeltranslation',
     'tastypie',
+    'ckeditor',
 
 )
 
@@ -297,3 +298,4 @@ if os.getenv("USER") != "jay" and os.getenv("USER") != "ubuntu" and os.getenv("U
 
 
 #TINYMCE_JS_URL = os.path.join(MEDIA_ROOT, "path/to/tiny_mce/tiny_mce.js")
+CKEDITOR_UPLOAD_PATH = "static" #TODO

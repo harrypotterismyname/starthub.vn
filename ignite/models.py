@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import  slugify
 import uuid
 from startups import settings
+from ckeditor.fields import RichTextField
 
 
 
@@ -109,7 +110,8 @@ class Founder(models.Model):
 
 class Meta_info(models.Model):
     slug = models.CharField(default="", max_length= 256)
-    content = models.TextField(default="")
+    content = RichTextField()
+    title =  models.TextField(default="")
 
     def __unicode__(self):
         return  self.slug

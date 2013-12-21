@@ -18,3 +18,5 @@ django-tinymce
 python-mimeparse
 python-dateutil
 django-tastypie
+django-ckeditor
+
